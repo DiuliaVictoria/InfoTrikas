@@ -1,0 +1,177 @@
+
+body{ 
+    margin: 0;
+    padding: 0;     
+    display: block;
+}
+
+.start{
+    height: 100vh;  
+    width: 100%;
+}
+
+
+.header{
+    background:  linear-gradient( 45deg, white ,rgba(255, 0, 0, 0.705),  rgba(255, 0, 0, 0.705), white );
+    text-decoration: none;
+    width: 100%;
+    height: 115px;
+    font-family: sans-serif;
+    color: white;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+}
+
+.logotrikas{
+    width: 200px;
+    transition: 0.8s;
+    margin-top: 8px;
+    margin-left: -20px;
+}
+ .logotrikas:hover{
+     width: 250px;
+ }
+
+.navbar {
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    column-gap: 24px;
+}
+
+.navbar a{
+    text-decoration: none;
+    font-family: 'Red Hat Display', sans-serif;
+    color: black;
+    font-size: 20px;
+    transition: 0.8s;
+}
+
+.navbar a:hover{
+    font-size: 28px;
+    color: white;
+}
+
+button{
+    color: white;
+    font-size: 20px;
+    font-family: 'Red Hat Display', sans-serif;
+    border: 2px red solid;
+    border-radius: 20px;
+    height: 50px;
+    width: 90px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-weight: bold;
+    background-color: red;
+    margin-right: -8px;
+}
+
+ button:hover{
+    color: white;
+    border: 2px white solid;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.menu{
+    width: 100%;
+    height: 100%;
+    float: left;
+    margin-top: 8%
+}
+
+.menu .videotrikas{
+    display: flex;
+    height: 28em;
+    width: 40em;
+    margin-top: 15px;
+    margin-right: -20px;
+}
+.slogan {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    color: red;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.719);
+    font-size: 28px;
+    font-family: 'Red Hat Display', sans-serif;
+    align-self: flex-start;
+    margin-right: 10%;
+    margin-top: -16%;
+    float: right;
+    transition: 0.5s;
+    list-style: none;
+}
+
+.slogan:hover{
+    color: black;
+    text-shadow: 0px 4px 4px red;
+}
+li{
+    list-style: none;
+}
+
+.club {
+    max-height: 100vh;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(10, 5, 5, 0.973);
+}
+
+.title_club{
+    width:80vw;
+    height: 28%;
+    font-size: 35px;
+    font-family: sans-serif;
+    color: red;
+    align-items: flex-start;
+    display: flex;
+    margin-left: 8%;
+    text-shadow: 0px 4px 4px rgba(255, 255, 255, 0.445);
+}
+
+.contentspfc{
+    margin-left: 30px;
+    font-size: 17px;
+    font-family: sans-serif;
+    color: white;
+    text-shadow: 0px 4px 4px rgba(49, 48, 48, 0.493);
+}
+
+.img_club{
+    float: right;
+    width: 30%;
+   margin-top: 19px;
+   margin-right: 50px;
+   border-radius: 3%;
+   border: 1px white solid;
+}
+
+.contentspfc button{
+    color: white;
+    font-size: 15px;
+    font-family: 'Red Hat Display', sans-serif;
+    border: 2px red solid;
+    border-radius: 20px;
+    height: 50px;
+    width: 100px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-weight: bold;
+    background-color: red;
+    margin-right: -8px;
+    float: left;
+    margin: 0.25em
+    
+    
+}
+
+.contentspfc button:hover{
+    color: white;
+    border: 2px white solid;
+    background-color: rgba(255, 255, 255, 0);
+}
