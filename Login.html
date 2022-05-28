@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/Login.css">
+    <link rel="shortcut icon" href="img/São_Paulo_Futebol_Clube.png">
+    <title>Login | Info Trikas </title>
+</head>
+<body >
+   
+<style>
+.icon-validation-true,.icon-validation-false{
+    display: none;
+    position: absolute;
+    margin-top: 19px;
+    background: transparent;
+    color: green;
+    margin-left: 20.5em;
+    transition: 0.5s ease-in;
+}    
+</style>    
+<!-- Seção Login -->
+<!-- Conteúdo Login -->
+<section class="container-login">
+    <!-- Conteúdo Lógin -->
+    <div class="content-form">
+        <!-- Logo  -->
+        <figure class="login-logo">
+            <a href="index.html"><img src="img/Info__2_-removebg-preview.png" alt="Logo"></a>
+        </figure>
+        <!-- Campo Login -->
+        <form id="form_login" method="post">
+        <div class="form-input input-login">
+            <label>Login:</label>
+            <i class="fa fa-user-o form-input-icon"></i>
+            <!-- Icone Validação -->
+            <i class="fa fa-check-circle icon-validation-true" id="icon_login_true"></i>
+            <i class="fa fa-times-circle icon-validation-false" id="icon_login_false"></i>
+            <!-- <input id="ipt_usuario_login"-->
+            <input id="ipt_login" onkeyup="validacao_login()" type="text" name="login" placeholder="Digite seu usuário"/>
+            <span class="form-validation-false" id="msg_login"></span>
+        </div>
+        <!-- Campo Senha -->
+        <div class="form-input input-login" >
+            <label>Senha: <span><a href="recover.html">Esqueceu a senha?</a></span></label> 
+            <i class="fa fa-lock form-input-icon"></i>
+            <!-- Icone Visualizar Senha -->
+            <i class="fa fa-eye-slash icon-display-password" id="form_show_password" onclick="display_show_password()"></i>
+            <i class="fa fa-eye icon-display-password" id="form_hidden_password" onclick="display_hidden_password()"></i>
+            <!-- Icone Validação -->
+            <i class="fa fa-check-circle icon-validation-true" id="icon_senha_true"></i>
+            <i class="fa fa-times-circle icon-validation-false" id="icon_senha_false"></i>
+            <!-- <input id="ipt_senha_login" -->
+            <input id="ipt_senha" onkeyup="validacao_senha()" type="password" name="senha" placeholder="Digite sua senha"/>
+            <span  class="form-validation-false" id="msg_senha"></span>
+        </div>
+        <!-- Botão Login -->
+        <div class="form-btn">
+            <span class="msg-cadastrar">Não possuí cadastro? <a href="cadastro.html"><b>Registre-se</b></a></span>
+            <button id="btn_entrar" class="btn btn-login" type="button" onclick="validacao_formulario()">Entrar</button>
+            <!-- Mensagem Validação -->
+            <span class="msg-validation" id="msg_formulario"></span>
+        </div>
+        </form>
+    </div>
+</section>
+</body>
+</html>
+<script>
+//Expressão Login
+var loginReg =/^[A-z0-9]([._-](?![._-])|[a-zA-Z0-9]){2,18}[a-zA-Z0-9]$/;
+//Expressão Senha
+var senhaReg = /^(?=.*[0-9]{3})(?=.*[A-Z]{1})(?=.*[a-z]{1})[a-zA-Z0-9]{6,}$/;
+// Visualizar Senha
+function display_show_password(){
+    form_show_password.style.display = 'none';
+    form_hidden_password.style.display = 'block';
+    ipt_senha.type = 'text';
+    
+}
+function display_hidden_password(){
+    form_show_password.style.display = 'block';
+    form_hidden_password.style.display = 'none';
+    ipt_senha.type = 'password';
+}
+// Validação Login
+function validacao_login(){
+    var login = ipt_login.value;
+    if(login.match(loginReg)){
+        msg_login.innerHTML = '';
+        ipt_login.style.border = '1px solid var(--green)';
+        ipt_login.style.color = 'var(--green)';
+        icon_login_true.style.display = 'block';   
+        icon_login_false.style.display = 'none';
+    } else{
+        msg_login.innerHTML = 'Insira um usuário válido';
+        msg_login.style.color = 'var(--redText)';
+        ipt_login.style.color = 'var(--redText)';
+        ipt_login.style.border = '1px solid var(--red)';
+        icon_login_false.style.color = 'var(--red)';
+        icon_login_false.style.display = 'block';
+        icon_login_true.style.display = 'none';
+    }        
+}
+// Validação Senha
+function validacao_senha(){
+    var senha = ipt_senha.value;
+    if(senha.match(senhaReg)){
+        msg_senha.innerHTML = '';
+        ipt_senha.style.border = '1px solid var(--green)';
+        ipt_senha.style.color = 'var(--green)';
+        icon_senha_true.style.display = 'block';   
+        icon_senha_false.style.display = 'none';
+    } else{
+        msg_senha.innerHTML = 'Insira um usuário válido';
+        msg_senha.style.color = 'var(--redText)';
+        ipt_senha.style.color = 'var(--redText)';
+        ipt_senha.style.border = '1px solid var(--red)';
+        icon_senha_false.style.color = 'var(--red)';
+        icon_senha_false.style.display = 'block';
+        icon_senha_true.style.display = 'none';
+    }        
+}
+ 
+// Validação no Botão
+function validacao_formulario(){
+    var login = ipt_login.value;
+    var senha = ipt_senha.value;
+    if(login.match(loginReg) && senha.match(senhaReg)){
+        msg_login.style.display = 'none';
+        entrar();
+    } else{
+        msg_login.style.display = 'block';
+        msg_login.innerHTML =  'Usuário ou Senha inválida. Tente novamente';
+    } 
+}
+</script>

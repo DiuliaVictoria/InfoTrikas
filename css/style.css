@@ -1,177 +1,483 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 
 body{ 
     margin: 0;
     padding: 0;     
-    display: block;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #8a969e75;
 }
 
 .start{
-    height: 100vh;  
+    height: 110vh;  
     width: 100%;
 }
 
 
 .header{
-    background:  linear-gradient( 45deg, white ,rgba(255, 0, 0, 0.705),  rgba(255, 0, 0, 0.705), white );
+    background: white;
     text-decoration: none;
     width: 100%;
-    height: 115px;
-    font-family: sans-serif;
-    color: white;
+    height: 80px;
+    color:red;
     font-size: 15px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     position: fixed;
     z-index: 1;
+    transition: 0.8s;
+    font-weight: bold;
 }
 
 .logotrikas{
-    width: 200px;
+    width: 190px;
+    margin-top: 23px;
     transition: 0.8s;
-    margin-top: 8px;
-    margin-left: -20px;
 }
- .logotrikas:hover{
-     width: 250px;
- }
 
+.logotrikas:hover{
+    width: 210px;
+}
 .navbar {
-    display: flex;
-    list-style: none;
-    flex-direction: row;
-    column-gap: 24px;
+   display: flex;
+   list-style: none;
+   flex-direction: row;
+   column-gap: 24px;
+   margin-right: 100px;
 }
 
 .navbar a{
-    text-decoration: none;
-    font-family: 'Red Hat Display', sans-serif;
-    color: black;
-    font-size: 20px;
-    transition: 0.8s;
+   text-decoration: none;
+   color: rgb(255, 0, 0);
+   font-size: 15px;
+   transition: 0.8s;
 }
 
 .navbar a:hover{
-    font-size: 28px;
-    color: white;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
 }
 
-button{
+.login{
     color: white;
-    font-size: 20px;
-    font-family: 'Red Hat Display', sans-serif;
+    font-size: 17px;
     border: 2px red solid;
     border-radius: 20px;
     height: 50px;
-    width: 90px;
+    width: 80px;
     cursor: pointer;
     transition: 0.5s;
     font-weight: bold;
     background-color: red;
-    margin-right: -8px;
+    margin-right: 20px;
 }
 
- button:hover{
-    color: white;
-    border: 2px white solid;
+.login:hover{
+    color: red;
+    border: 2px red solid;
     background-color: rgba(255, 255, 255, 0);
 }
-
-.menu{
+.page_header{
     width: 100%;
-    height: 100%;
-    float: left;
-    margin-top: 8%
+    height: 200px;
 }
 
-.menu .videotrikas{
-    display: flex;
-    height: 28em;
-    width: 40em;
-    margin-top: 15px;
-    margin-right: -20px;
+.img_header{
+    height: 100%;
+    width: 100%;
+}
+.text_trikas  {
+    font-size: 30px;
+    margin-top: -114px;
+    margin-left: 150px;
+    color: rgba(255, 255, 255, 0.377);
+}
+.text_trikas:hover{
+    font-size: 32px;
 }
 .slogan {
+    font-family: 'Montserrat', sans-serif;
     display: flex;
     margin: 0;
     padding: 0;
     color: red;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.719);
     font-size: 28px;
-    font-family: 'Red Hat Display', sans-serif;
     align-self: flex-start;
-    margin-right: 10%;
-    margin-top: -16%;
-    float: right;
-    transition: 0.5s;
+    margin-left: 30px;
+    margin-top: -25%;
+    float: left;
     list-style: none;
+    font-weight: bold;
 }
 
-.slogan:hover{
-    color: black;
-    text-shadow: 0px 4px 4px red;
+.slogan1 {
+    margin: 0;
+    padding: 0;
+    color: red;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.61);
+    font-size: 28px;
+    align-self: flex-start;
+    margin-left: 40px;
+    margin-top: -25%;
+    float: left;
+    list-style: none;
+    font-weight: bold;
 }
+
 li{
     list-style: none;
 }
 
-.club {
-    max-height: 100vh;
-    height: 100vh;
-    width: 100%;
-    background-color: rgba(10, 5, 5, 0.973);
-}
-
-.title_club{
-    width:80vw;
-    height: 28%;
-    font-size: 35px;
-    font-family: sans-serif;
-    color: red;
-    align-items: flex-start;
+.img_menu{
     display: flex;
-    margin-left: 8%;
-    text-shadow: 0px 4px 4px rgba(255, 255, 255, 0.445);
-}
-
-.contentspfc{
-    margin-left: 30px;
-    font-size: 17px;
-    font-family: sans-serif;
-    color: white;
-    text-shadow: 0px 4px 4px rgba(49, 48, 48, 0.493);
-}
-
-.img_club{
+    height: 30em;
+    width: 20em;
+    margin-right: 80px;
+    margin-top: -550px;
     float: right;
-    width: 30%;
-   margin-top: 19px;
-   margin-right: 50px;
-   border-radius: 3%;
-   border: 1px white solid;
+    transition: 0.5s;
 }
 
-.contentspfc button{
+.img_menu:hover{
+  height: 32em;
+  width: 22em;
+}
+
+.btn_cadastrar{
     color: white;
-    font-size: 15px;
-    font-family: 'Red Hat Display', sans-serif;
-    border: 2px red solid;
+    font-size: 20px;
+    border: 2px rgb(255, 0, 0) solid;
     border-radius: 20px;
     height: 50px;
-    width: 100px;
+    width: 110px;
     cursor: pointer;
-    transition: 0.5s;
-    font-weight: bold;
+    margin-left: 40px;
+    margin-top: -15%;
     background-color: red;
-    margin-right: -8px;
     float: left;
-    margin: 0.25em
-    
+    transition: 0.6s;
+}
+
+.btn_cadastrar:hover{
+    background-color: transparent;
+    color: red;
+}
+
+.container_club {
+    height: 150vh;
+    width: 100%;
+}
+
+.contentspfc1{
+    background: white;
+    backdrop-filter: blur(50px);
+    border-radius: 40px;
+    width: 28vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 50px;
+    font-weight: bold;
+    margin: 5px;
+    float: left;
+    margin-left: 50px;
+    margin-top: 60px;
+}
+
+.contentspfc1:hover{
+    width: 30vw;
+}
+
+.contentspfc2{
+    background: white;
+    backdrop-filter: blur(50px);
+    border-radius: 40px;
+    width: 28vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 50px;
+    font-weight: bold;
+    margin: 5px;
+    float: left;
+    margin-left: 50px;
+    margin-top: 60px;
     
 }
 
-.contentspfc button:hover{
+.contentspfc2:hover{
+    width: 30vw;
+}
+
+.contentspfc3{
+    background: white;
+    backdrop-filter: blur(50px);
+    border-radius: 40px;
+    width: 28vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 50px;
+    font-weight: bold;
+    margin: 5px;
+    float: left;
+    margin-left: 50px;
+    margin-top: 60px;
+}
+
+.contentspfc3:hover{
+    width: 30vw;
+}
+
+.text_club {
+    width: 100%;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;  
+    text-align: center;
+}
+
+
+.container_club{
+    background: url('../img/DitrltFX0AAOp5H.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 70vh;
+}
+.container_club{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.stadium{
+    padding: 0;
+    height: 200vh;
+    width: 100%;
+}
+
+.title-morumbi p{
+    width:80vw;
+    height: 28%;
+    font-size: 50px;
+    color: red;
+    display: flex;
+    margin-left: 70px;
+    text-shadow: 0px 4px 4px rgba(255, 255, 255, 0.671);
+    margin-top: 10%;
+    font-weight: bold;
+}
+.contentmorumbi{
+    background: linear-gradient(108.67deg, rgba(253, 253, 253, 0.562) 2.17%, rgba(255, 0, 0, 0.733) 101.22%);
+    backdrop-filter: blur(50px);
+    border-radius: 40px;
+    width: 53vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+.title-morumbi .morumbi_img{
+   display: flex;
+   margin-left: 6px;
+   margin-top: -8%;
+   width: 40vw;
+   float: left;
+   
+}
+
+.text{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+.maps{
+margin-left: 13%; 
+}
+
+.maps p{
+    width:80%;
+    height: 28%;
+    font-size: 40px;
+    color: red;
+    display: flex;
+    margin-left: 5em;
+    text-shadow: 0px 4px 4px rgba(255, 255, 255, 0.671);
+    margin-top: 10%;
+    font-weight: bold;
+}
+
+.symbol{
+    height: 120vh;
+    width: 100%;
+}
+.content_simbolo{
+    height: 900px;
+    width: 820px;
+    overflow: hidden;
+    margin-top: 2%;
+    margin-left: 20%;
+}
+
+.navigation{
+    position: absolute;
+    margin-bottom: 20%;
+    margin-left: 30%;
+    transform: translate(-50%);
+    display: flex;
+}
+
+ .bar{
+    width: 90px;
+    height: 17px;
+    margin-top: 3%;
+    border: 2px red solid;
+    cursor: pointer;
+    transition: 0.6s;  
+    margin: 2px;
+    border-radius: 20px;
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    background: white;
+}
+
+.bar:hover{
+    background: red;
     color: white;
-    border: 2px white solid;
-    background-color: rgba(255, 255, 255, 0);
+}
+
+input{display: none;
+}
+
+.slides{
+ display: flex;
+ width: 400%;
+ height: 95%;
+}
+
+.slide{
+    width: 25%;
+    transition: 0.6s; 
+}
+
+.slide img{
+    height: 100%;
+    width: 100%;
+}
+
+#slide1:checked ~ .s1{
+     margin-left: 0;
+}
+
+#slide2:checked ~ .s1{
+    margin-left: -25%;
+}
+
+#slide3:checked ~ .s1{
+    margin-left: -50%;
+}
+
+#slide4:checked ~ .s1{
+    margin-left: -75%;
+}
+
+.text_symbol p{
+    width:80vw;
+    height: 28%;
+    font-size: 50px;
+    color: red;
+    display: flex;
+    margin-left: 70px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.671);
+    margin-top: 10px;
+}
+
+.text1{
+    height: 20%;
+    font-size: 17px;
+}
+.patrician{
+    height: 150vh;
+    width: 100%;
+}
+.img_patrician img{
+     width: 80em;
+}
+
+.footer{
+    background: black;
+}
+.container-footer{
+    display: flex;
+    align-items: center;
+    padding: 1.5em 3em 0;
+}
+.footer-about{
+    display: flex;
+    flex-direction: column;
+}
+.footer-about img{
+    width: 12em;
+}
+.footer-about p{
+    font-size: 0.8em;
+    white-space: pre-line;
+}
+.footer-title{
+    font-size: 1em;
+    font-weight: 700;
+    color: red;
+    letter-spacing: 1px;
+}
+.nav-footer{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 8em;
+    list-style: none;
+    text-align: left;
+    width: 70vw;
+    justify-content: center;
+}
+.nav-footer > ul > li{
+    list-style: none;
+    font-size: 0.95em;
+    padding: 2px;
+    cursor: pointer;
+
+}
+
+li.footer-title > a{
+    color: white;
+}
+
+.nav-footer li a{
+    text-decoration: none;
+}
+.copyright{
+    padding: 1em 3em;
+}
+.copyright span{
+    color: white;
+    display: flex;
+    justify-content: center;
 }

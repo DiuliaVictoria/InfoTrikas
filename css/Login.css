@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Poppins&display=swap%27');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+html, body{
+    height: 100%;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+:root{
+    --background: black;
+    --primary: red;
+    --cream: white;
+    --cool: red;
+    --borderInput: white;
+    --petrol: #0B0A18;
+    --green: #48b16c;
+    --red: #D2200B;
+    --redText: #F24646;
+}
+
+body {background: var(--background);}
+/* Logo */
+.login-logo {
+    display: flex;
+    justify-content: center;
+}
+.login-logo img {
+    width: 17em;
+}
+/* Fim Logo */
+/* Inputs */
+.form-input label > span > a{
+    color: var(--primary);
+    font-size: 0.9em;
+    font-weight: 700;
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+}
+.form-input label {
+    display: flex;
+    color: var(--cream);
+    font-weight: 700;
+    font-size: 1.1em;
+    letter-spacing: 0.5px;
+    justify-content: space-between;
+}
+.form-input input {
+    color: var(--borderInput);
+    border: 1.5px solid var(--borderInput);
+    border-radius: 15px;
+    font-size: 1em;
+    outline: none;
+    background: transparent;
+}
+.form-input-icon {
+    position: absolute;
+    margin-top: 19px;
+    margin-left: 15px;
+    background: transparent;
+    color: var(--borderInput);
+}
+::placeholder {
+    color: red;
+    font-size: 1em;
+    letter-spacing: 0.5px;
+}
+/* Fim Inputs */
+/*Botão*/
+.btn {
+    font-size: 1em;
+    font-weight: 400;
+    text-decoration: none;
+    background: var(--primary);
+    color: var(--cream);
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: 0.6s;
+}
+.btn:hover {
+    text-decoration: none;
+    color: var(--primary);
+    background: transparent;
+    border: 1px solid var(--primary);
+}
+/*Fim-Botão*/
+/*Página Login*/
+.container-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom left;
+}
+.content-login {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+/*Input Login*/
+.input-login{padding: 1em 0 0;}
+.input-login label {padding: 0.5em 0.5em;}
+.input-login input{padding: 1em 10em 1em 2.4em;}
+/*Fim Input Login*/
+.form-btn{
+    padding: 1em 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} 
+.msg-cadastrar, .msg-cadastrar > a,.msg-cadastrar > a >  b,.form-btn > a{
+    color: var(--primary);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    padding-bottom: 5px;
+}
+.btn-login{
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    padding: 17px 90px;
+}
+.msg-validation{
+    display: none;
+    color: var(--redText);
+    font-weight: 700;
+    margin: 1em;
+}
+#form_hidden_password{display:none;}
+/* Recuperação de Senha */
+.container-recover-password{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #0B0A18;
+}
+/* Conteúdo Recuperação */
+.container-recover-password {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2em 2em;
+}
+.container-recover-password h1 {
+    color: var(--primary);
+    font-size: 3em;
+    font-weight: 900;
+}
+.content-recover-password{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2em 2em;
+}
+.content-recover-password article span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95em;
+    letter-spacing: 0.5px;
+    color: var(--cream);
+    display: block;
+    margin: 1em 0;
+    text-align: center;
+}
+.recover-form label{
+    display: block;
+    color: var(--cream);
+    font-weight: 800;
+}
+#icon_email_recover_false,#icon_email_recover_true {margin-left: 23em;}
+.recover-form input {
+    color: var(--borderInput);
+    border: 1.5px solid var(--borderInput);
+    border-radius: 15px;
+    font-size: 1em;
+    outline: none;
+    background: transparent;
+    padding: 1em 1em 1em 2.4em;
+    width: 25em;
+}
+.recover-form ::placeholder {width: 25em;}
+/* Fim Página Login */
+/* Página Cadastro */
+.container-register{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+}
+/* Imagem Cadastro */
+.content-image{
+    background: #DCEAFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.content-image img{display: flex;}
+/* Fim Imagem Cadastro */
+/* Formulário Cadastro */
+.content-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2em 2em;
+}
+.grid-register {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0 2em;
+}
+/* Validação Formulário */
+.form-validation-false {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75em;
+    color: var(--primary);
+    display: block;
+}
+.icon-display-password {
+    position: absolute;
+    color: var(--borderInput);
+    margin-top: 19px;
+    margin-left: 22em;
+    background: transparent;
+    cursor: pointer;
+}
+#icon_usuario_login_true, #icon_usuario_login_false, #icon_senha_login_true, #icon_senha_login_false{margin-left: 22em;}
+#icon_email_register_true, #icon_email_register_false, #icon_usuario_register_true, #icon_usuario_register_false ,#icon_senha_register_true, #icon_senha_register_false{margin-left: 38em;}
+#register_show_password,#register_hidden_password{margin-left: 35em;}
+#register_hidden_password{display:none;}
+/* Fim Formulário Cadastro
+/* Input Cadastro */
+.input-register {padding: 1em 0;}
+.input-register label {padding: 0.5em 0.5em;}
+.input-register input{padding: 1em 5em 1em 2.4em;}
+.form-register-bottom input{padding: 1em 26em 1em 2.4em;}
+/* Fim Input Cadastro */
+/* Fim Página Cadastro */
+
+
+@media screen and (max-width: 580px){
+    /* Logo Formulário */
+    .login-logo img{width: 15em;}
+    /* Conteúdo Cadastro */
+    .content-register{padding:2em 0;} 
+    .grid-register {grid-template-columns: inherit;} 
+    .input-register input {padding: 1em 5em 1em 2.4em;}
+    /* Conteúdo Login */
+    .input-login input{padding: 1em 5em 1em 2.4em}
+    .btn-login{padding: 17px 50px;}
+    .icon-validation-true,.icon-validation-false {margin-left: 17em;}
+    .icon-display-password{margin-left: 15em;}
+    /*Ícones Cadastro e Login*/
+    #icon_email_register_true, #icon_email_register_false, #icon_usuario_register_true, #icon_usuario_register_false, #icon_senha_register_true, #icon_senha_register_false{margin-left: 17em;}
+    #icon_usuario_login_true, #icon_usuario_login_false, #icon_senha_login_true, #icon_senha_login_false{margin-left: 17em;}
+    #register_show_password,#register_hidden_password{margin-left: 15em;}
+}
