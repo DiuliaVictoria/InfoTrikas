@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Trikas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/Login.css"> 
+    <link rel="shortcut icon" href="img/São_Paulo_Futebol_Clube.png" type="image/x-icon">
+    
+</head>
+<style>
+.icon-validation-true,.icon-validation-false{
+    display: none;
+    position: absolute;
+    margin-top: 19px;
+    background: transparent;
+    color: var(--green);
+    margin-left: 20.5em;
+    transition: 0.5s ease-in;
+}       
+</style>
+<body>
+
+<section class="container-recover-password">
+    <div class="card_recov">
+    <!-- Conteúdo Recuperação de Senha -->
+    <div class="content-recover-password">
+        <!-- Logo  -->
+        <figure class="login-logo">
+            <a href="index.html"><img src="img/Info__2_-removebg-preview.png" alt="Logo"></a>
+        </figure>
+        <!-- Campo Email -->
+        <article>
+            <h1>Esqueceu sua senha?</h1>
+            <span>Digite o email cadastrado</span>
+        </article>
+        <div class="recover-form">
+            <label>E-mail:</label>
+            <i class="fa fa-envelope-o form-input-icon"></i>
+            <!-- Icone Validação -->
+            <i class="fa fa-check-circle icon-validation-true" id="icon_email_recover_true"></i>
+            <i class="fa fa-times-circle icon-validation-false" id="icon_email_recover_false"></i>
+            <input id="ipt_email_recover" onkeyup="validacao_email_recover()" type="text" placeholder="fulano@dominio.com"/>
+            <span class="form-validation-false" id="msg_email_form"></span>
+        </div>
+        <!-- Botão Login -->
+        <div class="form-btn">
+            <a href="login.html"><b>Voltar a página anterior</b></a>            
+            <button class="btn btn-login" onclick="validacao_login()">Enviar</button>
+        <!-- Mensagem Validação -->
+        <span class="msg-validation" id="msg_recover_validation"></span>
+        </div>
+    </div>
+</div>
+    </section>
+</section>
+</body>
+</html>
+<script>
+function validacao_email_recover(){
+    // Verifica Email
+    var verificar_email_recover = ipt_email_recover.value.indexOf('@') && ipt_email_recover.value.indexOf('.');
+    if (verificar_email_recover >= 1){
+        msg_email_form.innerHTML = '';
+        msg_email_form.style.color = 'var(--green)';
+        ipt_email_recover.style.border = '1px solid var(--green)';
+        ipt_email_recover.style.color = 'var(--green)';
+        icon_email_recover_true.style.display = 'block';
+        icon_email_recover_false.style.display = 'none';
+    } else{
+        msg_email_form.innerHTML = 'Verifique o e-mail digitado';
+        msg_email_form.style.color = 'red';
+        ipt_email_recover.style.color = 'red';
+        ipt_email_recover.style.border = '1px solid red';
+        icon_email_recover_false.style.color = 'red';
+        icon_email_recover_false.style.display = 'block';
+        icon_email_recover_true.style.display = 'none';
+    }
+}
+function validacao_login(){
+    var verificar_email_recover = ipt_email_recover.value.indexOf('@') && ipt_email_recover.value.indexOf('.');
+    if(verificar_email_recover >= 1){
+        msg_recover_validation.style.display = 'block';
+        msg_recover_validation.innerHTML =  'Email enviado, verifique sua caixa de entrada!';
+        msg_recover_validation.style.color = 'var(--green)';
+    } else{
+        msg_recover_validation.style.display = 'block';
+        msg_recover_validation.innerHTML =  'E-mail inválido, verifique o campo preenchido.';
+    }
+}
+</script>

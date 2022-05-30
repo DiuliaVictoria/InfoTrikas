@@ -7,7 +7,6 @@ body{
     display: flex;
     flex-direction: column;
     font-family: 'Montserrat', sans-serif;
-    background-color: #8a969e75;
 }
 
 .start{
@@ -17,7 +16,7 @@ body{
 
 
 .header{
-    background: white;
+    background-color: black;
     text-decoration: none;
     width: 100%;
     height: 80px;
@@ -47,6 +46,7 @@ body{
    flex-direction: row;
    column-gap: 24px;
    margin-right: 100px;
+   
 }
 
 .navbar a{
@@ -58,7 +58,7 @@ body{
 
 .navbar a:hover{
     font-size: 20px;
-    color: rgb(0, 0, 0);
+    color: white;
 }
 
 .login{
@@ -278,7 +278,7 @@ li{
     font-weight: bold;
 }
 .contentmorumbi{
-    background: linear-gradient(108.67deg, rgba(253, 253, 253, 0.562) 2.17%, rgba(255, 0, 0, 0.733) 101.22%);
+    background: linear-gradient(108.67deg, rgba(0, 0, 0, 0.37) 2.17%, rgba(255, 0, 0, 0.733) 101.22%);
     backdrop-filter: blur(50px);
     border-radius: 40px;
     width: 53vw;
@@ -309,27 +309,60 @@ li{
     border-radius: 50px;
     font-weight: bold;
 }
+.break_apart{
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(108.67deg, rgba(0, 0, 0, 0.562) 2.17%, rgba(255, 0, 0, 0.733) 101.22%);
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+.galery{
+    width: 640px;
+    height: 360px;
+    overflow: hidden;
+    margin-left: 70px;
+}
+
+.galery .carrossel{
+    width: 500px;
+    animation-name: animacao;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;   
+}
+
+.galery .carrossel img{
+    width: 115%;
+}
+
+@keyframes animacao{
+    0%{margin-top: 0%;}
+    20%{margin-top: -60%;}
+    40%{margin-top: -120%;}
+    60%{margin-top: -180%;}
+    80%{margin-top: -240%;}
+    100%{margin-top: -290%;}
+}
 
 .maps{
 margin-left: 13%; 
-}
-
-.maps p{
-    width:80%;
-    height: 28%;
-    font-size: 40px;
-    color: red;
-    display: flex;
-    margin-left: 5em;
-    text-shadow: 0px 4px 4px rgba(255, 255, 255, 0.671);
-    margin-top: 10%;
-    font-weight: bold;
+float: right;
+margin-right: 70px;
+margin-top: -400px;
 }
 
 .symbol{
-    height: 120vh;
+    height: 140vh;
     width: 100%;
+    font-weight: bold;
+    background-color: beige;
 }
+.break_apartSymbol{
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(108.67deg, rgba(0, 0, 0, 0.562) 2.17%, rgba(255, 0, 0, 0.733) 101.22%);
+
+}
+
 .content_simbolo{
     height: 900px;
     width: 820px;
@@ -337,6 +370,7 @@ margin-left: 13%;
     margin-top: 2%;
     margin-left: 20%;
 }
+
 
 .navigation{
     position: absolute;
@@ -349,7 +383,7 @@ margin-left: 13%;
  .bar{
     width: 90px;
     height: 17px;
-    margin-top: 3%;
+    margin-top: 3px;
     border: 2px red solid;
     cursor: pointer;
     transition: 0.6s;  
@@ -419,13 +453,14 @@ input{display: none;
 .patrician{
     height: 150vh;
     width: 100%;
+    background-color: black;
 }
 .img_patrician img{
      width: 80em;
 }
 
 .footer{
-    background: black;
+    background: #8a969e75;
 }
 .container-footer{
     display: flex;
@@ -444,7 +479,7 @@ input{display: none;
     white-space: pre-line;
 }
 .footer-title{
-    font-size: 1em;
+    font-size:15px;
     font-weight: 700;
     color: red;
     letter-spacing: 1px;
@@ -467,7 +502,7 @@ input{display: none;
 }
 
 li.footer-title > a{
-    color: white;
+    color: black;
 }
 
 .nav-footer li a{
@@ -477,7 +512,8 @@ li.footer-title > a{
     padding: 1em 3em;
 }
 .copyright span{
-    color: white;
+    color: black;
     display: flex;
     justify-content: center;
 }
+

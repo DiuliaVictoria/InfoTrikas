@@ -8,10 +8,11 @@
 html, body{
     height: 100%;
 }
-body{
-    display: flex;
-    flex-direction: column;
+body {
+    font-family: 'Red Hat Display', sans-serif;
+    background-image: url(../img/61b592a668391b42a06af2c875ce0195.gif);
 }
+
 :root{
     --background: black;
     --primary: red;
@@ -23,8 +24,6 @@ body{
     --red: #D2200B;
     --redText: #F24646;
 }
-
-body {background: linear-gradient(108.67deg, rgba(0, 0, 0, 0.562) 2.17%, rgba(255, 0, 0, 0.733) 101.22%);}
 /* Logo */
 .login-logo {
     display: flex;
@@ -36,26 +35,20 @@ body {background: linear-gradient(108.67deg, rgba(0, 0, 0, 0.562) 2.17%, rgba(25
     margin-top: -60px;
 }
 /* Fim Logo */
-.img_sampa{
-    height: 100%;
-margin-left: 3px;
-float: left;
-}
+
 .card {
-    background: linear-gradient(108.67deg, rgba(255, 255, 255, 0.63) 2.17%, rgba(255, 255, 255, 0.39) 101.22%);
+    background: linear-gradient(108.67deg, rgba(255, 255, 255, 0.4) 2.17%, rgba(255, 255, 255, 0.20) 101.22%);
     backdrop-filter: blur(50px);
     border-radius: 40px;
     width: 50em;
-    height: 40em;
+    height: 50em;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50px;
     font-weight: bold;
-    margin-right: 20px;
-    float: right;
+    margin-left: 280px;
 }
-
 /* Inputs */
 .form-input label > span > a{
     color: var(--primary);
@@ -163,9 +156,8 @@ float: left;
     justify-content: center;
     align-items: center;
     height: 100vh;
-
+    background: #0B0A18;
 }
-
 /* Conteúdo Recuperação */
 .container-recover-password {
     display: flex;
@@ -173,20 +165,6 @@ float: left;
     align-items: center;
     justify-content: center;
     padding: 2em 2em;
-    
-}
-
-.card_recov{
-    background: linear-gradient(108.67deg, rgba(255, 255, 255, 0.63) 2.17%, rgba(255, 255, 255, 0.39) 101.22%);
-    backdrop-filter: blur(50px);
-    border-radius: 40px;
-    width: 50em;
-    height: 40em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50px;
-    font-weight: bold;
 }
 .container-recover-password h1 {
     color: var(--primary);
@@ -204,14 +182,14 @@ float: left;
     font-family: 'Poppins', sans-serif;
     font-size: 0.95em;
     letter-spacing: 0.5px;
-    color: var(--background);
+    color: var(--cream);
     display: block;
     margin: 1em 0;
     text-align: center;
 }
 .recover-form label{
     display: block;
-    color: var(--background);
+    color: var(--cream);
     font-weight: 800;
 }
 #icon_email_recover_false,#icon_email_recover_true {margin-left: 23em;}
@@ -229,6 +207,34 @@ float: left;
 /* Fim Página Login */
 
 
+/* Página Cadastro */
+.container-register{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+}
+/* Imagem Cadastro */
+.content-image{
+    background: #DCEAFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.content-image img{display: flex;}
+/* Fim Imagem Cadastro */
+/* Formulário Cadastro */
+.content-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2em 2em;
+}
+.grid-register {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0 2em;
+}
 /* Validação Formulário */
 .form-validation-false {
     font-family: 'Poppins', sans-serif;
@@ -239,11 +245,12 @@ float: left;
 .icon-display-password {
     position: absolute;
     color: var(--borderInput);
-    margin-top: 15px;
+    margin-top: 22px;
     margin-left: 18em;
     background: transparent;
     cursor: pointer;
 }
+
 #icon_usuario_login_true, #icon_usuario_login_false, #icon_senha_login_true, #icon_senha_login_false{margin-left: 22em;}
 #icon_email_register_true, #icon_email_register_false, #icon_usuario_register_true, #icon_usuario_register_false ,#icon_senha_register_true, #icon_senha_register_false{margin-left: 38em;}
 #register_show_password,#register_hidden_password{margin-left: 35em;}
