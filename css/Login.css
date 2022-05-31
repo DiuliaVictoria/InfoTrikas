@@ -19,12 +19,21 @@ body{
     --cool: red;
     --borderInput: black;
     --petrol: #0B0A18;
-    --green: #48b16c;
-    --red: #D2200B;
-    --redText: #F24646;
+    --green: #053f1a;
+    --red: #971c0e;
+    --redText: #c91414;
+}
+#screen_img{
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-image: url(../img/header.jpg);
+    transition: 0.2s;
+    display: flex;
+    flex-direction: row;
 }
 
-body {background: linear-gradient(108.67deg, rgba(0, 0, 0, 0.562) 2.17%, rgba(255, 0, 0, 0.733) 101.22%);}
+
 /* Logo */
 .login-logo {
     display: flex;
@@ -45,15 +54,17 @@ float: left;
     background: linear-gradient(108.67deg, rgba(255, 255, 255, 0.63) 2.17%, rgba(255, 255, 255, 0.39) 101.22%);
     backdrop-filter: blur(50px);
     border-radius: 40px;
-    width: 50em;
+    width: 40em;
     height: 40em;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50px;
     font-weight: bold;
-    margin-right: 20px;
     float: right;
+    margin-left: 20px;
+    margin-top: 10px;
+
 }
 
 /* Inputs */

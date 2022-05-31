@@ -20,9 +20,9 @@ body {
     --cool: red;
     --borderInput: black;
     --petrol: #0B0A18;
-    --green: #48b16c;
-    --red: #D2200B;
-    --redText: #F24646;
+    --green: #053f1a;
+    --red: #971c0e;
+    --redText: #c91414;
 }
 /* Logo */
 .login-logo {
@@ -280,5 +280,5 @@ body {
     /*Ícones Cadastro e Login*/
     #icon_email_register_true, #icon_email_register_false, #icon_usuario_register_true, #icon_usuario_register_false, #icon_senha_register_true, #icon_senha_register_false{margin-left: 17em;}
     #icon_usuario_login_true, #icon_usuario_login_false, #icon_senha_login_true, #icon_senha_login_false{margin-left: 17em;}
-    #register_show_password,#register_hidden_password{margin-left: 15em;}
+    #register_show_password,#register_hidden_password{margin-left: 1em;}
 }

@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'quicksand';
+
+}
+
+
+.screen{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-image: url(../img/Design\ sem\ nome.gif);
+    transition: 0.6s;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.menu {
+    width: 27vw;
+    height: 100vh;
+    background-color:  rgba(0, 0, 0, 0.719);;
+    display: flex;
+    flex-direction: column;
+    color:red;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+}
+.logo img {
+    width: 15em;
+    margin-bottom: -100px;
+    margin-top: -60px;}
+
+
+.top_menu{
+    height: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 25px;
+    font-weight: 700;
+
+}
+
+.down_menu{
+    height: 60%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+.button_menu{
+    color: white;
+    font-size: 20px;
+    border: 2px rgb(255, 0, 0) solid;
+    border-radius: 20px;
+    height: 50px;
+    width: 150px;
+    cursor: pointer;
+    margin-left: 40px;
+    margin-top: 10px;
+    transition: 0.6s;
+    margin-bottom: 50px;   
+    background-color: red;
+}
+
+.button_menu:hover{
+    background-color: transparent;
+    color: red;
+}
+
+#quiz_content {
+    background-color:  rgba(0, 0, 0, 0.719);;
+    width: 100%;
+    height: 100%;
+    display: none;
+    color: red;
+
+}
+
+.play{
+    width: 100%;
+    height: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.button_play{
+    color: white;
+    font-size: 20px;
+    border: 2px rgb(255, 0, 0) solid;
+    border-radius: 20px;
+    height: 50px;
+    width: 150px;
+    cursor: pointer;
+    margin-left: 40px;
+    margin-top: 50px;
+    background-color: red;
+    float: left;
+    transition: 0.6s;
+    margin-bottom: 50px;   
+}
+
+.button_play:hover{
+    background-color: transparent;
+    color: red;
+}
+.title_questions{
+    font-size: 2em;
+    color: white;
+    text-align: center;
+}
+.questions{
+    background-color:  rgba(0, 0, 0, 0.719); ;
+    width: 95%;
+    height: 300%;
+    margin-top: 200px;
+    display: none;
+    color: red;
+}
+
+#result_quiz{
+
+    background-color:  rgba(0, 0, 0, 0.719);;
+    width: 95%;
+    height: 95%;
+    display: none;
+    flex-direction: column;
+    margin-top: 90px;
+    color: white;
+
+
+
+}
+
+#number_of_hits {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'quicksand';
+    font-weight: 700;
+    font-size: 25px;
+
+}
+
+#graphics {
+    width: 100%;
+    height: 45%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+
+}
+
+
+.graphics_size{
+
+    width: 45%;
+    height: 70%;
+}
+
+
+
+#restart {
+
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.alternatives {
+    width: 100%;
+    height: 75%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.button_alternatives{
+    color: white;
+    font-size: 20px;
+    border: 2px rgb(255, 0, 0) solid;
+    border-radius: 20px;
+    height: 50px;
+    width: 150px;
+    cursor: pointer;
+    margin-left: 40px;
+    margin-top: 50px;
+    background-color: red;
+    float: left;
+    transition: 0.6s;
+    margin-bottom: 50px;   
+}
+
+.button_alternatives:hover{
+    background-color: transparent;
+    color: white;
+}
+
+.fresh_start{
+    color: white;
+    font-size: 20px;
+    border: 2px rgb(255, 0, 0) solid;
+    border-radius: 20px;
+    height: 50px;
+    width: 150px;
+    cursor: pointer;
+    margin-left: 40px;
+    margin-top: 50px;
+    background-color: red;
+    float: left;
+    transition: 0.6s;
+    margin-bottom: 50px;   
+}
+
+.fresh_start:hover{
+    background-color: transparent;
+    color: white;
+}
+
+.button_restart{
+    color: white;
+    font-size: 20px;
+    border: 2px rgb(255, 0, 0) solid;
+    border-radius: 20px;
+    height: 50px;
+    width: 150px;
+    cursor: pointer;
+    margin-left: 40px;
+    margin-top: 20px;
+    background-color: red;
+    float: left;
+    transition: 0.6s;
+    margin-bottom: 50px; 
+    display: none;
+}
+
+.button_restart:hover{
+    background-color: transparent;
+    color: black;
+}

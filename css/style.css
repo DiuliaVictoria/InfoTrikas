@@ -7,6 +7,7 @@ body{
     display: flex;
     flex-direction: column;
     font-family: 'Montserrat', sans-serif;
+    background-color: white;
 }
 
 .start{
@@ -143,8 +144,8 @@ li{
 }
 
 .img_menu:hover{
-  height: 32em;
-  width: 22em;
+    transition: 0.5s;
+    transform: scale(1.03);
 }
 
 .btn_cadastrar{
@@ -162,10 +163,8 @@ li{
     transition: 0.6s;
 }
 
-.btn_cadastrar:hover{
-    background-color: transparent;
-    color: red;
-}
+
+
 
 .container_club {
     height: 150vh;
@@ -185,12 +184,14 @@ li{
     font-weight: bold;
     margin: 5px;
     float: left;
-    margin-left: 50px;
+    margin-left: 15px;
     margin-top: 60px;
+   padding: 6px;
 }
 
 .contentspfc1:hover{
-    width: 30vw;
+    transition: 0.5s;
+    transform: scale(1.03);
 }
 
 .contentspfc2{
@@ -208,11 +209,13 @@ li{
     float: left;
     margin-left: 50px;
     margin-top: 60px;
-    
+    padding: 6px;  
 }
 
 .contentspfc2:hover{
-    width: 30vw;
+    transition: 0.5s;
+    transform: scale(1.03);
+
 }
 
 .contentspfc3{
@@ -230,10 +233,12 @@ li{
     float: left;
     margin-left: 50px;
     margin-top: 60px;
+    padding: 6px;
 }
 
 .contentspfc3:hover{
-    width: 30vw;
+    transition: 0.5s;
+    transform: scale(1.03);
 }
 
 .text_club {
@@ -300,6 +305,15 @@ li{
    
 }
 
+.contentmorumbi:hover{
+    transition: 0.5s;
+    transform: scale(1.01);
+}
+
+.morumbi_img:hover{
+    transition: 0.5s;
+    transform: scale(1.03);
+}
 .text{
     width: 90%;
     display: flex;
@@ -309,6 +323,8 @@ li{
     border-radius: 50px;
     font-weight: bold;
 }
+
+
 .break_apart{
     width: 100%;
     height: 10px;
@@ -354,7 +370,6 @@ margin-top: -400px;
     height: 140vh;
     width: 100%;
     font-weight: bold;
-    background-color: beige;
 }
 .break_apartSymbol{
     width: 100%;
@@ -458,6 +473,7 @@ input{display: none;
 .img_patrician img{
      width: 80em;
 }
+
 
 .footer{
     background: #8a969e75;
