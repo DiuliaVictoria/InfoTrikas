@@ -1,0 +1,64 @@
+var inscricaoNewsletter = {
+  init : function() {
+    inscricaoNewsletter.inscrever();
+    inscricaoNewsletter.cancelar();
+  },
+  inscrever: function(){
+    $('form#formInscricaoNewsletter').submit(function(event){
+      event.preventDefault();
+       
+      var validador = RegExp("^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
+      if($("#txt-newsletter").val() == "" || !validador.test($("#txt-newsletter").val()))
+      {
+        alert("E-mail inválido.");
+        return; 
+      }
+      var url = "/base/CadastroNewsletter/Cadastrar";
+      $.ajax({
+        type: 'POST'
+        ,data: {email: $("#txt-newsletter").val()}
+        ,url: url
+        ,success: function(){
+          $('#form-newsletter').hide();
+          $('#feedback-sucess').show();
+        }
+        ,error: function(data){
+          alert('Ocorreu um erro durante a inscrição, tente novamente mais tarde.');
+        }
+      });
+    });
+  },
+  cancelar: function() {
+    $('form#formCancelarInscricaoNewsletter').submit(function(event){
+      event.preventDefault();
+      var validador = RegExp("^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$");
+      if($("#txt-newsletter").val() == "" || !validador.test($("#txt-newsletter").val()))
+      {
+        alert("E-mail inválido.");
+        return;
+      }
+      $.ajax({
+         type: 'GET',
+         url: "http://www3.easymailing.com.br/easy/smart_integracao_xp.php",
+         data:
+          ({
+            CON_ID: "120394cf79e2528d4ad181923d5b17d847c99",
+            GRUPOS: "45116",
+            SMT_MAIL: $("#txt-newsletter").val(),
+            SMT_RECEBER: "0"
+          }),
+          success: function(){
+              alert("Inscrição cancelada com sucesso.");
+           },
+          error: function(data){
+              alert("Ocorreu um erro durante o proesso, tente novamente mais tarde.");
+          },
+         datatype: "text"
+      });
+    });
+  }
+}
+
+$(document).ready(function(){
+  inscricaoNewsletter.init();
+});

@@ -1,0 +1,226 @@
+var home = {
+  init : function() {
+    home.splash();
+    home.store();
+    home.playersCarousel();
+    home.homeHighlights();
+    home.LatestGamesToolTip();
+    home.navNews();
+  },
+  
+  LatestGamesToolTip : function(){
+    $('#last-games .team-shield[title]').tooltip({
+      effect: 'fade',
+      layout: '<div><span/></div>',
+      slideOffset: 10,
+      relative: false,
+      tipClass: 'team-tooltip',
+      position:'bottom center'
+    });
+    
+  },
+  
+  store : function() {
+    $('#holder-products ul').width( ($('#holder-products ul li').width() + 20) * $('#holder-products ul li').size() );
+    $('#holder-products .scroll-products').jScrollPane({horizontalDragMinWidth: 150, horizontalDragMaxWidth: 150 });
+  },
+  
+  
+  homeHighlights : function(){
+    
+    var autoPlay = setInterval(nextItem,5000);
+    
+    $('.img-highlight').click(function(){
+      $('.descr-highlight').click();
+    })
+
+    var speed = 'medium';
+    var opcLevel = 0.33;
+    var navSelect = $('.nav-highlight ul li a');
+    
+
+    //Superdestaque antigo
+    /*$('.nav-highlight ul li a').not(':first').each(function(i){
+      $('.lst-highlight').append('<li><img class="img-highlight" src="'+$(this).attr('href')+'" /></li>');
+    });*/
+    $('.nav-highlight ul li a').each(function(i){
+      $('.lst-highlight').append('<li><img class="img-highlight" src="'+$(this).attr('href')+'" /></li>');
+    });
+    
+    // Reseting opacity
+    $('.lst-highlight li').not(':first').children('img').css({opacity:0});
+    
+    // Starting the animation
+    navSelect.not('.selected').children().fadeTo(speed, opcLevel);
+    
+    //Replacing the starting text
+    var altText = $('.nav-highlight ul li .selected').children().attr('alt');
+  if(altText) {
+    var splitHtml =  '<span>' + altText.replace(/;/g,'</span><br /><span>') + '</span>';
+    $('.descr-highlight').html(splitHtml);
+  }
+
+    $('.descr-highlight').attr('href',$('.nav-highlight ul li a.selected img').attr('rel'));
+    
+    //Highlight click action
+    $('.img-highlight, .descr-highlight-holder').click(function(){
+      if($('.descr-highlight-holder a').attr('target') == '_blank')
+      {
+        window.open($('.descr-highlight-holder a').attr('href'));
+      }
+      else
+      {
+        location.href = $('.descr-highlight-holder a').attr('href');
+      }
+    });
+
+    navSelect.click(function(){
+      
+      //Zerando a navegacao automatica :
+      clearInterval(autoPlay);
+      
+      var navIndex = $(this).parent('li').index();
+      var selItem = $('.lst-highlight li')[navIndex];
+      
+      //Animation transition
+      $('.lst-highlight li img').not($(selItem).children()).animate({opacity:0});
+      $(selItem).children().animate({opacity:1},speed);
+
+      navSelect.removeClass('selected');
+      $(this).addClass('selected');
+      navSelect.not($(this, '.selected')).children().fadeTo(speed, opcLevel);
+      $('img',this).fadeTo(speed,1);
+      
+
+      //Image text
+      //$('.descr-highlight').html($(this).children().attr('alt').replace(/;/g,'&nbsp; <br /> &nbsp;'));
+      var altText = $('.nav-highlight ul li .selected').children().attr('alt');
+    var splitHtml = '';
+    if(altText) {
+    splitHtml =  '<span>' + altText.replace(/;/g,'</span><br /><span>') + '</span>';
+    }
+      $('.descr-highlight').html(splitHtml);
+      $('.descr-highlight').attr('href',$('img',this).attr('rel'));
+      $('.descr-highlight').attr('target', $('img', this).parent().attr('target'));
+      
+      
+      //Navegacao automatica
+      autoPlay = setInterval(nextItem, 5000);
+
+      return false;
+    })
+    
+    function nextItem(){
+      var next = $('.nav-highlight ul li a.selected').closest('li').next('li').find('a');
+      if($(next)[0] != undefined){
+        $(next).click(); 
+      }
+      else{
+        $('.nav-highlight ul li a').first().click();
+      }
+    }
+
+  },
+  
+  // tabsInfoGames : function(){
+  //   $('#games-info').showHide({
+  //     navSelClass : 'active',
+  //     selOnParent : true
+  //   });
+  // },
+  
+  navNews : function(){
+    $('.nav-news ul').showHide({
+      navSelClass : 'active',
+      contentClass: 'news-content'
+    });
+  },
+  
+  splash : function(){
+    var countDown = setInterval(removeSplash,6000);
+    
+    function removeSplash(){
+      $('#splash-screen').fadeOut('fast',function(){
+        clearInterval(countDown);
+        $('#splash-screen').remove();
+      });
+    }
+
+    if($('#splash-screen div.title-holder a.link').attr('href') != '')
+    {
+      $('#splash-screen div.title-holder a.close').click(function(event){
+        event.preventDefault();
+        removeSplash();
+      });
+      $('#splash-screen div.title-holder a.link').click(function(){
+        removeSplash();
+      });
+    }
+    else
+    {
+      $('#splash-screen').click(function(event){
+        event.preventDefault();
+        removeSplash();
+      });
+    }
+  },
+  
+  playersCarousel : function() {
+    
+    $('#players-contentflow .panel-players:first').show();
+    
+    $('.holder-links').each(function(i){
+      
+      var _thisHolder = $(this);
+      var _links = _thisHolder.find('a');
+      
+      //var _eachWidth = _thisHolder.width() / _links.size();
+      var _eachWidth = 990 / _links.size();
+      _links.width( _eachWidth);
+      
+//      $(this + ' .holder-links a').width(
+//          ( 995 / $( this + ' .holder-links a').size() )
+//      );
+      
+    });
+    
+    $('.holder-links a[title]').tooltip({
+      effect: 'fade',
+      slideOffset: 10,
+      offset: [350, 2],
+      relative: false
+    });
+    
+    _slider = new Dragdealer('holder-slider', {
+      steps: 6,
+      snap: false,
+      loose: false,
+      animationCallback: function(x, y) {
+        //console.log(x);
+      },
+      callback: function(x, y) {
+        var step = (x*10/2);
+        $('#nav-slider a').eq(step).click();
+      }
+    });
+    
+    $('#nav-slider a').bind('click', function() {
+      //console.info( $(this).parent().index() );
+      
+      $(this).addClass('active');
+      $('#nav-slider a').not(this).removeClass('active');
+      
+      var _totalItens = $('#players-contentflow .panel-players');
+      $('#players-contentflow .panel-players:visible').hide();
+      $(_totalItens[$(this).parent().index()]).fadeIn();
+      
+      _slider.setStep( $(this).parent().index()+1 );
+      
+    });
+        
+  }
+}
+
+$(document).ready(function() {
+  home.init();
+});

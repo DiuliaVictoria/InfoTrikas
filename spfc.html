@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/spfc.css">
+    <link rel="shortcut icon" href="img/São_Paulo_Futebol_Clube.png">
+    <title> SPFC | Info Trikas</title>
+</head>
+<body>
+
+    <div class="screen" id="screen_img">
+
+        <div class="menu" id="menu">
+
+            <figure class="logo">
+                <a href="index.html"><img src="img/Info__2_-removebg-preview.png" alt="Logo"></a>
+            </figure>
+
+            <div class="top_menu">
+                <span id="message">Bem vindo!</span>
+            </div>
+
+            <div class="down_menu">  
+                <button class="button_menu">Jogos</button>
+
+                <button class="button_menu"> Equipe </button>
+
+               <a href="quizz.html"> <button class="button_restart" id="button_restart">Voltar</button></a> 
+
+                <a href="index.html"><button class="button_menu">Sair</button></a>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
+<script>
+
+function mudar_imagem() {
+        var imagens = ['url(./img/header.jpg)','url(./img/2.jpg)', 'url(./img/3.jpg)', 'url(./img/4.jpg)', 'url(./img/5.jpg)', 'url(./img/7.jpg)']
+
+        var aleatorio = Math.floor(Math.random(1) * (6))
+
+
+       screen_img.style.backgroundImage = imagens[aleatorio];
+    }
+
+    setInterval(
+        function () {
+            mudar_imagem()
+        }, 2000);
+</script>

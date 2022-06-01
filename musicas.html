@@ -4,10 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/music.css">
+    <link rel="shortcut icon" href="img/São_Paulo_Futebol_Clube.png">
+    <title>Musicas | Info Trikas</title>
 </head>
 <body>
-    
+
+    <div class="screen" id="screen_img">
+
+        <div class="menu" id="menu">
+
+            <figure class="logo">
+                <a href="index.html"><img src="img/Info__2_-removebg-preview.png" alt="Logo"></a>
+            </figure>
+
+            <div class="top_menu">
+                <span id="message">Bem vindo!</span>
+            </div>
+
+            <div class="down_menu">   
+
+               <a href="quizz.html"> <button class="button_restart" id="button_restart">Voltar</button></a> 
+
+                <a href="index.html"><button class="button_menu">Sair</button></a>
+            </div>
+
+
+
+
+        </div>
+    <div class="content_msc">
 <select class="music_content" id="music_content">
     <option value="music" selected> -- </option>
     <option value="1">Hino</option>
@@ -30,30 +56,17 @@
     <option value="18">Com Muito Orgulho</option>
     <option value="19">Paixão Eterna</option>
     <option value="20">Se tem jogo eu vou</option>
-    <option value="21">Sou Tricolor de Coração</option>
-    <option value="22">Vamos Torcer Pro São Paulo Ser Campeão</option>
-    <option value="23">Canção do HEXA</option>
-    <option value="24">Herança</option>
-    <option value="25">Ôô São Paulo</option>
-    <option value="26">Cantamos com amor eternamente ao tricolor</option>
-    <option value="27">Goleiro Matador</option>
-    <option value="28">Sonho Meu</option>
-    <option value="29">Uma Vida de Amor</option>
-    <option value="30">Vamos Ser Campeões</option>
-    <option value="31">Honraremos Nosso Passado</option>
-    <option value="32">São Paulo é melhor</option>
-    <option value="33">Tricolor Eu Sou</option>
-    <option value="34">Vai lá, vai lá, vai lá</option>
-    <option value="35">Vamo São Paulo</option>
-    <option value="36">Vamos Rogerio C</option>
-    <option value="37">Eu Sou Dragões Real</option>
-    <option value="38">Eu vô chorar</option>
-    <option value="39">O sonho acabou</option>
-    <option value="40">Tricolor o mais temido</option> <br>
+  <br>
 </select>
-        <button onclick="ver_letra()">Ver Música</button>
-
-      <div class="content_musicspfc" id="content_musicspfc"></div> 
+        <button class="button_letra" onclick="ver_letra()">Ver Música</button>
+<div class="card">
+    <h1 id="card_msc">Escolha acima uma musica !!!</h1>
+      <div class="content_musicspfc" id="content_musicspfc"> </div>
+        <div class="content_msc" id="content_msc"></div>
+    
+      </div>
+      
+    </div>
 </body>
 </html>
 
@@ -62,7 +75,7 @@ function ver_letra(){
     var letra = music_content.value
 
     if(letra == 1){
-
+        card_msc.style.display = "none"
         content_musicspfc.innerHTML = 
 ` Salve o Tricolor Paulista <br>
 Amado clube brasileiro <br>
@@ -79,9 +92,10 @@ Vêm do passado <br> <br>
 Oh, Tricolor <br>
 Clube bem amado <br>
 As tuas glórias <br>
-Vêm do passado <br> <br>
-
-São teus guias brasileiros <br>
+Vêm do passado <br> <br>`
+   
+content_msc.innerHTML = 
+`São teus guias brasileiros <br>
 Que te amam ternamente <br>
 De São Paulo tens o nome <br>
 Que ostentas dignamente <br>
@@ -109,6 +123,7 @@ As tuas glórias <br>
 Vêm do passado` 
     }
      else if (letra == 2){
+      card_msc.style.display = "none"
         content_musicspfc.innerHTML = 
 `tenho libertadores <br>
 Não alugo estádio  <br>
@@ -118,8 +133,11 @@ Sou, eu sou tricolor  <br>
 Sou, eu sou tricolor  <br>
 Sou, eu sou tricolor  <br>
 Sou, eu sou tricolor`
+        content_msc.innerHTML = ''
      }
      else if(letra == 3){
+      card_msc.style.display = "none"
+        content_msc.innerHTML = ''
          content_musicspfc.innerHTML = 
 `Isso que bate no meu coração <br>
 É o sentimento de ser campeão <br>
@@ -136,8 +154,11 @@ O grito é tricolor oôoô <br> <br>
 
 oôoôoô SÃO PAULO! <br>
 oôoôoô SÃO PAULO!`
+    
      }
      else if(letra == 4){
+      card_msc.style.display = "none"
+        content_msc.innerHTML = ''
           content_musicspfc.innerHTML=
 `Vai lá, vai lá, vai lá <br>
 Vai lá de coração <br>
@@ -160,6 +181,8 @@ Vamos São Paulo, vamos São Paulo <br>
 Sou tricolor do coração`
      }
      else if(letra == 5){
+      card_msc.style.display = "none"
+        content_msc.innerHTML = ''
          content_musicspfc.innerHTML =
 `Galinha! <br>
 Galinha sem história! <br>
@@ -172,6 +195,8 @@ Galinha sem estádio! <br>
 Fregues do tricolor!`
      }
      else if(letra == 6){
+      card_msc.style.display = "none"
+        content_msc.innerHTML = ''
          content_musicspfc.innerHTML= 
 `Sou, Sou São Paulo Até Morrer <br>
 Não importa o que acontecer <br>
@@ -184,6 +209,8 @@ Onde estiver contigo estou <br>
 Onde Jogar Torcer eu vou OOOO` 
      }
      else if(letra == 7){
+      card_msc.style.display = "none"
+        content_msc.innerHTML = ''
            content_musicspfc.innerHTML =
 `Domingo eu vou lá no Morumbi <br>
 Eu vou eu vou <br>
@@ -204,6 +231,8 @@ Oooooo oooo oooo oooo São Paulo <br>
 Oooooo oooo oooo oooo São Paulo`
      }
      else if (letra == 8){
+      card_msc.style.display = "none"
+        content_msc.innerHTML = ''
          content_musicspfc.innerHTML = 
 `Como eu te amo tricolor, <br>
 Como eu te amo demais, <br>
@@ -215,6 +244,8 @@ Tricolor tu és meu viver, <br>
 Ô tricolor eu amo você !!`
      }
      else if(letra == 9){
+      card_msc.style.display = "none"
+        content_msc.innerHTML = ''
          content_musicspfc.innerHTML = 
 `Olê Olê Olê <br>
 Olê Olê Olê Oláa <br>
@@ -235,6 +266,8 @@ Sou independente <br>
 Independente é o sentimento, que não pode acabar`
      }
      else if (letra == 10) {
+      card_msc.style.display = "none"
+        content_msc.innerHTML = ''
          content_musicspfc.innerHTML = 
 `A maré tá cheia <br>
 tá tá tá tá tá <br>
@@ -261,7 +294,9 @@ Caiu na rede é peixe leleá <br>
 TRICOLOR vai golea !`
      }
      else if(letra == 11){
-         content_musicspfc = 
+      card_msc.style.display = "none"
+        content_msc.innerHTML = ''
+         content_musicspfc.innerHTML= 
 `Ei alô porcada, <br>
 alô torcida de cuzão. <br>
 Pra encara Dragões Real, <br>
@@ -277,7 +312,9 @@ eu sou da Dragões Real, <br>
 a mais temida o terror...`
      }
      else if(letra == 12){
-         content_musicspfc = 
+      card_msc.style.display = "none"
+        content_msc.innerHTML = ''
+         content_musicspfc.innerHTML = 
 `São paulo, o mais querido... <br>
 Nessa batalha queremos estar contigo! <br>
 Te apoiaremos de coração... <br>
@@ -287,6 +324,130 @@ O que digam os rivais! <br>
 Na vitória ou na derrota... <br>
 Cada vez te amo mais!`
 
+     }
+     else if (letra == 13){
+      card_msc.style.display = "none"
+        content_msc.innerHTML = ''
+         content_musicspfc.innerHTML = 
+`O tricolor é campeão do mundo <br>
+Chora porco Imundo! <br>
+O tricolor é campeão do mundo <br>
+Chora porco Imundo!`
+     }
+     else if (letra == 14){
+      card_msc.style.display = "none"
+        content_msc.innerHTML = ''
+         content_musicspfc.innerHTML = 
+`Foram lá no México <br>
+E fizeram 4X2 <br>
+Pensaram que no Maraca <br>
+Seria feijão com arroz <br>
+Só que eles esqueceram <br>
+Que Libertadores não é carioca <br>
+Agora todo mundo já sabe <br>
+Que o menguinho sempre pipoca... <br> <br>
+
+Chora o presidente <br>
+Chora o goleirinho <br>
+Chora o técnico <br>
+Chora todo o timinho... <br> <br>
+
+Chora menguinho...`
+     }
+     else if(letra == 15){
+      card_msc.style.display = "none"
+        content_msc.innerHTML = ''
+         content_musicspfc.innerHTML = 
+`E ninguém cala <br>
+Esse chororo <br>
+Chora gaviada <br>
+Chora a porcada <br>
+O campeão volto <br> <br>
+
+E ninguém cala <br>
+Esse chororo <br>
+Chora gaviada <br>
+Chora a porcada <br>
+O campeão volto `
+     }
+     else if (letra == 16){
+      card_msc.style.display = "none"
+        content_msc.innerHTML = ''
+         content_musicspfc.innerHTML = 
+`Se vc não é são paulino, <br>
+Trate logo de correr,correr correr... <br>
+Ela vem com seus guerreiros, <br>
+Ela vem pra te fuder,pra te fuder... <br>
+A dragões é assim mesmo... <br>
+Dá porrada em qualquer um, <br>
+Mas que beleza... <br>
+Que belezaaa.. a dragões não tem medo de morrer, <br>
+Olêlê olálá, a dragões já vem aí e o bicho vai pega...`
+     }
+     else if (letra == 17){
+      card_msc.style.display = "none"
+        content_msc.innerHTML = ''
+         content_musicspfc.innerHTML = 
+`Incentivando com paixão,  <br>
+E também com muito amor.  <br>
+É a Dragões da Real,  <br>
+Incentivando o tricolor.  <br>
+Essa história é muito linda,  <br>
+Do passado até hoje.  <br>
+Somos campeões do mundo,  <br>
+3 vezes da libertadores.  <br>
+Mas se tu não ta ligado,  <br>
+É o melhor do Brasil.  <br>
+Mas quem não torce pro São Paulo,  <br>
+Vai pra puta&#65279; que pariu...  <br>
+Mas quem não torce pro São Paulo,  <br>
+Vai pra puta que pariu...`
+     }
+     else if (letra == 18){
+      card_msc.style.display = "none"
+        content_msc.innerHTML = ''
+         content_musicspfc.innerHTML = 
+`Dalhee, Dalhe Tricoloor <br>
+Com muito orgulho <br>
+Com muito amooorr <br> <br>
+
+Dalhee, Dalhe Tricoloor <br>
+Com muito orgulho <br>
+Com muito amooorr` 
+     }
+     else if (letra == 19){
+      card_msc.style.display = "none"
+        content_msc.innerHTML = ''
+         content_musicspfc.innerHTML = 
+`É um sonho, <br>
+É uma paixão, <br>
+Um sentimento, <br>
+Uma nação, <br>
+De vermelho preto e branco, <br>
+Unidas por um ideal. <br> <br>
+
+Coração, alma e sangue tricolor. <br>
+Nossa vida, nosso amor.`
+     }
+     else {
+      card_msc.style.display = "none"
+        content_msc.innerHTML = ''
+         content_musicspfc.innerHTML = 
+`Ôh ôh <br> <br>
+
+Se tem jogo eu vou <br>
+Ver meu tricolor <br> <br>
+
+Dá-lhe dá-lhe São Paulo <br> 
+Dá-lhe dá-lhe São Paulo <br> <br>
+
+Ôh ôh <br> <br>
+
+Se tem jogo eu vou <br>
+Ver meu tricolor <br> <br>
+
+Dá-lhe dá-lhe São Paulo <br>
+Dá-lhe dá-lhe São Paulo`
      }
 }
 

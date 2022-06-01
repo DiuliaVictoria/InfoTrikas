@@ -1,0 +1,100 @@
+var common = {
+  init : function() {
+    common.siteNavigation();
+    common.enablePlaceholder();
+    common.modalbox.init();
+  },
+
+  siteNavigation : function() {
+    $('#main-navigation ul li a').not('.submenu a').mouseenter(function(){
+        $(this).parent('li').children('.submenu').show();
+
+      //Setting the width for the submenu top
+      var borderWidth = $(this).parent('li').width(); 
+      $(this).parent('li').children('.submenu').children('.submenu-top').children('span').width(borderWidth);
+
+    });
+
+    $('#main-navigation ul li').mouseleave(function(){
+      $('section' ,this).hide()
+    })
+  },
+  
+  enablePlaceholder : function() {
+    $('input[placeholder], textarea[placeholder]').placeholder();
+  },
+
+  wallpapersSize : function() {
+    
+    /* $('.wallpapers-list li table').each(function() {
+      var tableHeight = $(this).height();
+      $(this).stop(true, false).animate({
+        bottom: -tableHeight
+      });
+    }); */
+
+    $('.wallpapers-list li img').mouseenter(function() {
+      $(this).parent().children('table').stop(true, true).animate({
+            bottom: 0
+        });
+    });
+    
+    $('.wallpapers-list li').mouseleave(function() {
+      var tableHeight = $(this).children('table').height();
+        $(this).children('table').stop(true, false).animate({
+            bottom: -tableHeight
+        });
+    });
+  },
+
+    modalbox: {
+
+        init: function () {
+            $("a[rel='modalbox']").live('click', function () {
+                common.modalbox.open($(this).attr('href'));
+                return false;
+            });
+            common.modalbox.close();
+        },
+
+        open: function (hrefAjax, callback) {
+            $.fancybox({
+                'autoDimensions': true,
+                'autoScale': false,
+                'scrolling': 'no',
+                'centerOnScroll': true,
+                'href': hrefAjax,
+                'overlayColor': '#000',
+                'overlayOpacity': 0.7,
+                'type': 'iframe'
+            });
+            return false;
+        },
+
+        close: function () {
+            $('.modal .close').live('click', function () {
+                parent.$.fancybox.close();
+                return false;
+            });
+        }
+    },
+  
+  downloadHino: function() { 
+    $('.downloadHino li').each(function(index, value) {
+      var audio = $(value).children('a').attr('href');
+      var so = new SWFObject('/assets/flash/swf/spfc_player_flashxml.swf', 'player', '500', '100', '8', '#FFFFFF');
+      so.addParam("flashvars", "caminhoMusica=" + audio);
+      console.log(audio);
+      so.addParam("wmode", "transparent");
+      var container = 'flashcontent' + (index + 1);
+      if( so.write(container) ) {
+        //var forcesize = new SWFForceSize(so, 500, 100);
+      }
+    });
+  }
+}
+
+$(document).ready(function(){
+  common.init();
+  common.downloadHino();
+});
