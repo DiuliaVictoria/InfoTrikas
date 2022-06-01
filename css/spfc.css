@@ -98,3 +98,144 @@ body {
     background-color: transparent;
     color: red;
 }
+
+.content_team{
+    background-color:  rgb(0, 0, 0);
+    width: 100vw;
+    height: 100vh;
+    color: red;
+   display: none;
+}
+
+.content_simbolo{
+    height: 400px;
+    width: 950px;
+    overflow: hidden;
+    margin-top: 50px;
+    margin-left: 80px;
+}
+
+.navigation{
+    position: absolute;
+    margin-left: 400px;
+    transform: translate(-50%);
+    display: flex;
+    margin-top: 500px;
+}
+
+ .bar{
+    width: 90px;
+    height: 17px;
+    cursor: pointer;
+    transition: 0.6s;  
+    margin: 2px;
+    color: whitesmoke;
+    text-align: center;
+    font-weight: bold;
+    margin-left:50px;
+    font-size: 1em;
+}
+
+.bar:hover{
+    font-size: 1.5em ;
+}
+
+input{display: none;
+}
+
+.slides{
+ display: flex;
+ width: 600%;
+ height: 95%;
+}
+
+.slide{
+    width: 25%;
+    transition: 0.6s; 
+}
+
+.slide img{
+    height: 100%;
+    width: 80%;
+}
+
+#slide1:checked ~ .s1{
+     margin-left: 2%;
+}
+
+#slide2:checked ~ .s1{
+    margin-left: -20%;
+}
+
+#slide3:checked ~ .s1{
+    margin-left: -50%;
+}
+
+#slide4:checked ~ .s1{
+    margin-left: -75%;
+}
+
+#slide5:checked ~ .s1{
+    margin-left: -100%;
+}
+
+#slide6:checked ~ .s1{
+    margin-left: -125%;
+}
+
+.next_games{
+    background:  linear-gradient(108.67deg, rgba(0, 0, 0, 0.562) 2.17%, rgba(0, 0, 0, 0.562) 101.22%);
+    width: 100vw;
+    height: 100vh;
+    color: red;
+    display: none;
+  
+}
+
+.next_play{
+    height: 120px;
+    margin: 10px;
+    width: 800px;
+    border: 2px solid red;
+    border-radius: 35px;
+    margin-left: 155px;
+    background: rgba(0, 0, 0, 0.719);
+}
+
+.next_play:hover{
+    transition: 0.5s;
+    transform: scale(1.03);
+}
+.page_title{
+    font-size: 2em;
+    text-align: center;
+    color: white;
+}
+
+.next_play h1{
+    color: white;
+    font-size: 1em;
+    margin-left: 20px;
+}
+
+.next_play li{
+    color: white;
+    margin-left: 20px;
+    list-style: none;
+}
+
+.Prohibited{
+    float: right;
+    margin-right: 20px;
+    margin-top: -60px;
+    color: white;
+    font-size: 20px;
+    border: 2px rgb(255, 0, 0) solid;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: red;
+    transition: 0.6s;
+    width: 90px;
+    height: 50px;
+  
+}

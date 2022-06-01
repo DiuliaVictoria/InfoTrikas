@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="shortcut icon" href="img/São_Paulo_Futebol_Clube.png">
     <title> SPFC | Info Trikas</title>
 </head>
+
 <body>
 
     <div class="screen" id="screen_img">
@@ -22,33 +24,139 @@
                 <span id="message">Bem vindo!</span>
             </div>
 
-            <div class="down_menu">  
-                <button class="button_menu">Jogos</button>
+            <div class="down_menu">
+                <button class="button_menu" onclick="play()">Jogos</button>
 
-                <button class="button_menu"> Equipe </button>
+                <button class="button_menu" onclick="team()"> Equipe </button>
 
-               <a href="quizz.html"> <button class="button_restart" id="button_restart">Voltar</button></a> 
+                <a href="quizz.html"> <button class="button_restart" id="button_restart">Voltar</button></a>
 
                 <a href="index.html"><button class="button_menu">Sair</button></a>
             </div>
-
         </div>
-    </div>
+
+        <div class="content_team" id="content_team">
+            <div class="content_simbolo" id="content_simbolo">
+
+                <br>
+                <div class="slides">
+                    <input type="radio" name="slide" id="slide1" checked>
+                    <input type="radio" name="slide" id="slide2">
+                    <input type="radio" name="slide" id="slide3">
+                    <input type="radio" name="slide" id="slide4">
+                    <input type="radio" name="slide" id="slide5">
+                    <input type="radio" name="slide" id="slide6">
+
+                    <div class="navigation">
+
+                        <label class="bar" for="slide1"> Goleiro </label>
+                        <label class="bar" for="slide2"> Defesa </label>
+                        <label class="bar" for="slide3"> Laterias </label>
+                        <label class="bar" for="slide4"> Volante </label>
+                        <label class="bar" for="slide5"> Meio Campo </label>
+                        <label class="bar" for="slide6"> Atacantes </label>
+
+                    </div>
+
+                    <div class="slide s1">
+                        <img src="img/GOLEIROS_17.05.22.png"  alt=""> <br> <br>
+                    </div>
+
+                    <div class="slide">
+                        <img src="img/ZAGUEIROS_07.03.22.jpg" alt="">
+                    </div>
+
+                    <div class="slide">
+                        <img src="img/LATERAIS_12.04.22.png" style="width: 60%;" alt=""> <br> <br>
+                    </div>
+
+                    <div class="slide">
+                        <img src="img/VOLANTES_07.03.22.jpg" style="width: 60%;" alt=""> <br> <br>
+                    </div>
+
+                    <div class="slide">
+                        <img src="img/MEIAS18.04.22.png" style="width: 60%;" alt=""> <br> <br>
+                    </div>
+
+                    <div class="slide">
+                        <img src="img/ATACANTES_12.04.22.png" style="width: 60%;"  alt=""> <br> <br>
+                    </div>
+
+                </div>
+                 </div>
+                </div>
+            
+
+            <div class="next_games" id="next_games">
+                <div class="trikas" id="trikas">
+                    <p class="page_title">Agendas de proximos Jogos:</p>
+
+                  <div class="next_play">
+                   <h1>São Paulo x América-MG</h1> 
+                   <li>Data: 12/06/2022</li> 
+                    <li>Estádio: Morumbi - São Paulo</li> 
+                    <li>Horário: 16h00 </li>   
+                   <a href="ingresso.html" target="_blank"><button class="Prohibited">Ingresso</button> </a>                 
+                  </div>
+
+                  <div class="next_play">
+                  <h1> Botafogo x São Paulo</h1> 
+                   <li>Data: 16/06/2022</li> 
+                   <li> Estádio: Nilton Santos - Rio de Janeiro (RJ)</li>
+                   <li>  Horário: 16h00</li>
+                   <a href="ingresso.html" target="_blank"><button class="Prohibited">Ingresso</button> </a>    
+                  </div>
+
+                  <div class="next_play">
+                    <h1>São Paulo x Palmeiras</h1> 
+                   <li>Data: 20/06/2022</li>  
+                   <li> Estádio: Morumbi - São Paulo</li> 
+                    <li> Horário: 20h00</li>
+                    <a href="ingresso.html" target="_blank"><button class="Prohibited">Ingresso</button> </a>   
+                   </div>
+ 
+                   <div class="next_play">
+                    <h1>  São Paulo x Juventude </h1>
+                    <li>  Data: 26/06/2022</li> 
+                    <li> Estádio: Morumbi - São Paulo</li> 
+                    <li>  Horário: 18h00</li> 
+                    <a href="ingresso.html" target="_blank"><button class="Prohibited">Ingresso</button> </a>   
+                   </div>
+
+                </div>
+            </div>
+       
+        </div>
 </body>
+
 </html>
 <script>
-
-function mudar_imagem() {
-        var imagens = ['url(./img/header.jpg)','url(./img/2.jpg)', 'url(./img/3.jpg)', 'url(./img/4.jpg)', 'url(./img/5.jpg)', 'url(./img/7.jpg)']
+    function mudar_imagem() {
+        var imagens = ['url(./img/header.jpg)', 'url(./img/2.jpg)', 'url(./img/3.jpg)', 'url(./img/4.jpg)', 'url(./img/5.jpg)', 'url(./img/7.jpg)']
 
         var aleatorio = Math.floor(Math.random(1) * (6))
 
 
-       screen_img.style.backgroundImage = imagens[aleatorio];
+        screen_img.style.backgroundImage = imagens[aleatorio];
     }
 
     setInterval(
         function () {
             mudar_imagem()
         }, 2000);
+
+
+   function  team() {
+    content_team.style.display = "block"
+    content_simbolo.style.display = "block"
+    next_games.style.display = "none"
+   }
+
+   function play(){
+       next_games.style.display = "block"
+       content_simbolo.style.display = "none"
+       content_team.style.display = "none"
+
+   }
+
 </script>

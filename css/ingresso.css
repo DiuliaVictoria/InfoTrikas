@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(../img/3.jpg);
+   
+}
+
+.next_games{
+    width: 99.8vw;
+    height: 99.5vh;
+    color: red;
+    background: rgba(0, 0, 0, 0.719);
+    padding: 1px;
+}
+
+.next_play{
+    height: 120px;
+    margin: 10px;
+    width: 800px;
+    border: 2px solid red;
+    border-radius: 35px;
+    margin-left: 40px;
+    background: rgba(0, 0, 0, 0.322);
+}
+
+.next_play:hover{
+    transition: 0.5s;
+    transform: scale(1.03);
+}
+.page_title{
+    font-size: 2em;
+    margin-left: 40px;
+    color: white;
+    font-weight: bold;
+}
+
+.next_play h1{
+    color: white;
+    font-size: 1em;
+    margin-left: 20px;
+}
+
+.next_play li{
+    color: white;
+    margin-left: 20px;
+    list-style: none;
+}
+
+.purchase{
+    float: right;
+    margin-right: 30px;
+    margin-top: -60px;
+    color: white;
+    font-size: 17px;
+    border: 2px rgb(255, 0, 0) solid;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color:transparent;
+    transition: 0.6s;
+    width: 90px;
+    height: 50px;
+  
+}
+
+#buy_ticket{
+    background: linear-gradient(108.67deg, rgba(0, 0, 0, 0.582) 2.17%, rgba(255, 255, 255, 0.39) 101.22%);
+    backdrop-filter: blur(50px);
+    border-radius: 40px;
+    width: 50em;
+    height: 30em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-left: 300px;
+    margin-top: 40px;
+    display: none;
+}
+.text{
+    color: white;
+    font-size: 1em;
+    margin-left: 30px;
+ 
+}
+.ticket{
+    color: white;
+    border: 2px solid red;
+    border-radius: 15px;
+    outline: none;
+    background: transparent;
+    margin-left: 20px;
+    width: 200px;
+    height: 50px;
+    margin: 15px;
+    margin-bottom: 80px;
+}
+
+.button_ticket{
+    margin: 15px;
+    color: white;
+    font-size: 17px;
+    border: 2px rgb(255, 0, 0) solid;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color:transparent;
+    width: 130px;
+    height: 50px
+}
+
+#answer{
+color: white;
+font: 1em;
+margin-top: 40px;
+background: linear-gradient(108.67deg, rgba(0, 0, 0, 0.863) 2.17%, rgba(0, 0, 0, 0.863) 101.22%);
+width: 45em;
+height: 80px;
+border-radius: 40px;
+text-align: center;
+}
+
+#available_games{
+    color: red;
+    font-size: 20px;
+    border: 2px rgb(255, 0, 0) solid;
+    border-radius: 20px;
+    height: 50px;
+    width: 200px;
+    cursor: pointer;
+    margin-left: 300px;
+    margin-top: 20px;
+    background-color: white;
+    transition: 0.6s;
+    text-align: center;
+}

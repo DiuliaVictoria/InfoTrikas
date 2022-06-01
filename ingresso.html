@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/São_Paulo_Futebol_Clube.png">
+    <link rel="stylesheet" href="css/ingresso.css">
+    <title> Info trikas | Ingressos </title>
+</head>
+
+<body>
+
+    <div id="buy_ticket">
+        <div class="text">
+            <select id="available_games">
+                <option value="nada">--</option>
+                <option value="1"> São Paulo x América-MG</option>
+                <option value="2"> Botafogo x São Paulo</option>
+                <option value="3">São Paulo x Palmeiras</option>
+                <option value="4"> São Paulo x Juventude </option>
+            </select> <br>
+
+            Insira a Quantidade de ingresso: <input class="ticket" id="ticket_inp"> <br>
+            Insira o Nome do Titular: <input class="ticket" id="name_inp"> <br>
+
+            Valor unitário : R$ 150,00 <br>
+
+            <button class="button_ticket" onClick="window.location.reload()">Voltar</button> <br>
+            <button class="button_ticket" id="Finishing" onclick="add()">Adicionar ao carrinho</button>
+            <div id="answer"></div>
+        </div>
+    </div>
+
+    <section class="next_games" id="next_games">
+
+
+        <p class="page_title">Jogos disponiveis:</p>
+
+        <div class="next_play">
+            <h1>São Paulo x América-MG</h1>
+            <li>Data: 12/06/2022</li>
+            <li>Estádio: Morumbi - São Paulo</li>
+            <li>Horário: 16h00 </li>
+            <button class="purchase" id="purchase" onclick="purchase()">Comprar</button>
+        </div>
+
+        <div class="next_play">
+            <h1> Botafogo x São Paulo</h1>
+            <li>Data: 16/06/2022</li>
+            <li> Estádio: Nilton Santos - Rio de Janeiro (RJ)</li>
+            <li> Horário: 16h00</li>
+            <button class="purchase" id="purchase" onclick="purchase()">Comprar</button>
+        </div>
+
+        <div class="next_play">
+            <h1>São Paulo x Palmeiras</h1>
+            <li>Data: 20/06/2022</li>
+            <li> Estádio: Morumbi - São Paulo</li>
+            <li> Horário: 20h00</li>
+            <button class="purchase" id="purchase" onclick="purchase()">Comprar</button>
+        </div>
+
+        <div class="next_play">
+            <h1> São Paulo x Juventude </h1>
+            <li> Data: 26/06/2022</li>
+            <li> Estádio: Morumbi - São Paulo</li>
+            <li> Horário: 18h00</li>
+            <button class="purchase" id="purchase" onclick="purchase()">Comprar</button>
+        </div>
+    </section>
+</body>
+
+</html>
+
+<script>
+
+    var ticket_list = []
+
+    function purchase() {
+        buy_ticket.style.display = "Block"
+        next_games.style.display = "none"
+
+    }
+
+    function add() {
+        var qnt_ticket = Number(ticket_inp.value)
+        var name = name_inp.value
+        var game = available_games.value
+
+
+        if (qnt_ticket <= 0) {
+            alert("Insira valores validos")
+        }
+
+
+        else {
+            ticket_list.push(game)
+
+    }
+  }
+
+
+</script>
