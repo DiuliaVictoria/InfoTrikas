@@ -108,27 +108,8 @@ body {
     border: 3px solid var(--primary);
 }
 /*Fim-Botão*/
-/*Página Login*/
-.container-login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom left;
-}
-.content-login {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    justify-items: center;
-    align-items: center;
-}
-/*Input Login*/
-.input-login{padding: 1em 0 0;}
-.input-login label {padding: 0.5em 0.5em;}
-.input-login input{padding: 1em 10em 1em 2.4em;}
-/*Fim Input Login*/
+
+
 .form-btn{
     padding: 1em 1em;
     display: flex;
@@ -149,63 +130,6 @@ body {
     font-weight: 700;
     margin: 1em;
 }
-#form_hidden_password{display:none;}
-/* Recuperação de Senha */
-.container-recover-password{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: #0B0A18;
-}
-/* Conteúdo Recuperação */
-.container-recover-password {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2em 2em;
-}
-.container-recover-password h1 {
-    color: var(--primary);
-    font-size: 3em;
-    font-weight: 900;
-}
-.content-recover-password{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2em 2em;
-}
-.content-recover-password article span {
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.95em;
-    letter-spacing: 0.5px;
-    color: var(--cream);
-    display: block;
-    margin: 1em 0;
-    text-align: center;
-}
-.recover-form label{
-    display: block;
-    color: var(--cream);
-    font-weight: 800;
-}
-#icon_email_recover_false,#icon_email_recover_true {margin-left: 23em;}
-.recover-form input {
-    color: var(--borderInput);
-    border: 1.5px solid var(--borderInput);
-    border-radius: 15px;
-    font-size: 1em;
-    outline: none;
-    background: transparent;
-    padding: 1em 1em 1em 2.4em;
-    width: 25em;
-}
-.recover-form ::placeholder {width: 25em;}
-/* Fim Página Login */
-
 
 /* Página Cadastro */
 .container-register{
@@ -251,10 +175,14 @@ body {
     cursor: pointer;
 }
 
-#icon_usuario_login_true, #icon_usuario_login_false, #icon_senha_login_true, #icon_senha_login_false{margin-left: 22em;}
-#icon_email_register_true, #icon_email_register_false, #icon_usuario_register_true, #icon_usuario_register_false ,#icon_senha_register_true, #icon_senha_register_false{margin-left: 38em;}
-#register_show_password,#register_hidden_password{margin-left: 35em;}
+#icon_name_register_false, #icon_name_register_true, #icon_lastname_register_true, #icon_lastname_register_false,
+#icon_cpf_register_true, #icon_cpf_register_false, #icon_tel_register_true, #icon_tel_register_false {margin-left: 14em; margin-top: 15px;}
+
+#icon_email_register_true, #icon_email_register_false, #icon_usuario_register_true, #icon_usuario_register_false {margin-left: 31em; margin-top: 15px;}
+#register_show_password,#register_hidden_password{margin-left: 31em; margin-top: 15px;} 
 #register_hidden_password{display:none;}
+
+#icon_senha_register_true, #icon_senha_register_false{margin-top: 15px; margin-left: 29em;}
 /* Fim Formulário Cadastro
 /* Input Cadastro */
 .input-register {padding: 1em 0;}
@@ -275,10 +203,10 @@ body {
     /* Conteúdo Login */
     .input-login input{padding: 1em 5em 1em 2.4em}
     .btn-login{padding: 17px 50px;}
-    .icon-validation-true,.icon-validation-false {margin-left: 17em;}
+    .icon-validation-true,.icon-validation-false {margin-left: 1em;}
     .icon-display-password{margin-left: 15em;}
     /*Ícones Cadastro e Login*/
     #icon_email_register_true, #icon_email_register_false, #icon_usuario_register_true, #icon_usuario_register_false, #icon_senha_register_true, #icon_senha_register_false{margin-left: 17em;}
     #icon_usuario_login_true, #icon_usuario_login_false, #icon_senha_login_true, #icon_senha_login_false{margin-left: 17em;}
-    #register_show_password,#register_hidden_password{margin-left: 1em;}
+    #register_show_password,#register_hidden_password{margin-left: -1em;}
 }

@@ -13,13 +13,20 @@
 <body>
 
     <div id="buy_ticket">
-        <div class="text">
-            <select id="available_games">
+        <div class="text" id="text">
+            Selecione o Jogo: <select id="available_games">
                 <option value="nada">--</option>
-                <option value="1"> São Paulo x América-MG</option>
-                <option value="2"> Botafogo x São Paulo</option>
-                <option value="3">São Paulo x Palmeiras</option>
-                <option value="4"> São Paulo x Juventude </option>
+                <option value="São Paulo x América-MG"> São Paulo x América-MG</option>
+                <option value=" Botafogo x São Paulo"> Botafogo x São Paulo</option>
+                <option value="São Paulo x Palmeiras">São Paulo x Palmeiras</option>
+                <option value="São Paulo x Juventude"> São Paulo x Juventude </option>
+            </select> <br>
+
+            Insira o Tipo de ingresso <select id="option_game">
+                <option value="nada">--</option>
+                <option value="1"> Meia </option>
+                <option value="2"> Inteira </option>
+
             </select> <br>
 
             Insira a Quantidade de ingresso: <input class="ticket" id="ticket_inp"> <br>
@@ -27,12 +34,15 @@
 
             Valor unitário : R$ 150,00 <br>
 
-            <button class="button_ticket" onClick="window.location.reload()">Voltar</button> <br>
-            <button class="button_ticket" id="Finishing" onclick="add()">Adicionar ao carrinho</button>
-            <div id="answer"></div>
+
+            <button class="button_ticket" id="Finishing" onclick="add()">Adicionar ao carrinho</button> <br>
+            <button class="button_ticket" id="end" onclick="the_end()">Finalizar Compra</button> <br>
+            <button class="button_ticket2" onClick="window.location.reload()">Voltar</button>
+           
         </div>
     </div>
-
+    <div id="answer"> 
+        <button class="button_ticket" onClick="window.location.reload()">Voltar</button> <br> <br></div>
     <section class="next_games" id="next_games">
 
 
@@ -77,6 +87,7 @@
 <script>
 
     var ticket_list = []
+    var total = 0
 
     function purchase() {
         buy_ticket.style.display = "Block"
@@ -85,6 +96,7 @@
     }
 
     function add() {
+        var option = option_game.value
         var qnt_ticket = Number(ticket_inp.value)
         var name = name_inp.value
         var game = available_games.value
@@ -93,13 +105,50 @@
         if (qnt_ticket <= 0) {
             alert("Insira valores validos")
         }
-
-
+        else if (qnt_ticket > 5) {
+            alert("Voce pode comprar no Maxímo 5 ingressos")
+        }
         else {
-            ticket_list.push(game)
+            ticket_list.push(qnt_ticket)
+            alert("Ingresso Adicionado ao Carrinho")
 
+        }
     }
-  }
+
+    function the_end() {
+        answer.style.display = "block"
+        buy_ticket.style.display = "none"
+
+        var option = option_game.value
+        var game = available_games.value
+        var qnt_ticket = Number(ticket_inp.value)
+        var name = name_inp.value 
+        var contador= 0
+
+        for (var posicao = 0; posicao < ticket_list.length; posicao++) {
+           
+        
+            total = (qnt_ticket * 150)
+        if(option == 1){
+            
+
+            answer.innerHTML += `${name} <br>
+                Sua compra de ${ticket_list[posicao]} Ingressos <br>
+                   para o jogo ${game}, foi realizada com Sucesso! <br>
+                    Valor Total ${total} R$ <br> <br>`
+        }
+
+     else{
+
+            answer.innerHTML += `${name} <br>
+                Sua compra de ${ticket_list[posicao]} Ingressos <br>
+                   para o jogo ${game}, foi realizada com Sucesso! <br>
+                    Valor Total ${total / 2} R$ <br> <br>`
+            
+        }
+    }
+    
+
 
 
 </script>

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/Login.css">
     <link rel="shortcut icon" href="img/São_Paulo_Futebol_Clube.png">
+     <script src="js/funcoes.js"></script>
     <title>Login | Info Trikas </title>
 </head>
 <body >
@@ -44,7 +45,7 @@
             <i class="fa fa-check-circle icon-validation-true" id="icon_login_true"></i>
             <i class="fa fa-times-circle icon-validation-false" id="icon_login_false"></i>
             <!-- <input id="ipt_usuario_login"-->
-            <input id="ipt_login" onkeyup="validacao_login()" type="text" name="login" placeholder="Digite seu usuário"/>
+            <input id="ipt_usuario" onkeyup="validacao_login()" type="text" name="login" placeholder="Digite seu usuário"/>
             <span class="form-validation-false" id="msg_login"></span>
         </div>
         <!-- Campo Senha -->
@@ -111,18 +112,18 @@ function display_hidden_password(){
 }
 // Validação Login
 function validacao_login(){
-    var login = ipt_login.value;
+    var login = ipt_usuario.value;
     if(login.match(loginReg)){
         msg_login.innerHTML = '';
-        ipt_login.style.border = '1px solid var(--green)';
-        ipt_login.style.color = 'var(--green)';
+        ipt_usuario.style.border = '1px solid var(--green)';
+        ipt_usuario.style.color = 'var(--green)';
         icon_login_true.style.display = 'block';   
         icon_login_false.style.display = 'none';
     } else{
         msg_login.innerHTML = 'Insira um usuário válido';
         msg_login.style.color = 'var(--redText)';
-        ipt_login.style.color = 'var(--redText)';
-        ipt_login.style.border = '1px solid var(--red)';
+        ipt_usuario.style.color = 'var(--redText)';
+        ipt_usuario.style.border = '1px solid var(--red)';
         icon_login_false.style.color = 'var(--red)';
         icon_login_false.style.display = 'block';
         icon_login_true.style.display = 'none';
@@ -150,14 +151,71 @@ function validacao_senha(){
  
 // Validação no Botão
 function validacao_formulario(){
-    var login = ipt_login.value;
+    var usuario = ipt_usuario.value;
     var senha = ipt_senha.value;
-    if(login.match(loginReg) && senha.match(senhaReg)){
+    if(usuario.match(loginReg) && senha.match(senhaReg)){
         msg_login.style.display = 'none';
-        entrar();
+        validacao_formulario();
+        fetch("/usuarios/autenticar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    usuarioServer: usuario,
+                    passwordServer: senha,
+                })
+            }).then(function (resposta) {
+                console.log("ESTOU NO THEN DO validacao_formulario()!")
+
+                if (resposta.ok) {
+                    console.log(resposta);
+
+                    resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+
+                        sessionStorage.EMAIL_USUARIO = json.emailUsuario;
+                        sessionStorage.NOME_USUARIO = json.nomeUsuario;
+                        sessionStorage.ID_USUARIO = json.idUsuario;
+
+                        setTimeout(function () {
+                            window.location = "quizz.html";
+                        }, 1000); // apenas para exibir o loading
+
+                    });
+
+                } else {
+
+                    console.log("Houve um erro ao tentar realizar o login!");
+
+                    resposta.text().then(texto => {
+                        console.error(texto);
+                        finalizarAguardar(texto);
+                    });
+                }
+
+            }).catch(function (erro) {
+                console.log(erro);
+            })
+
+            return false;
+
+        
+    
+
+    // function sumirMensagem() {
+    //     cardErro.style.display = "none"
+    // }
+
+
     } else{
         msg_login.style.display = 'block';
         msg_login.innerHTML =  'Usuário ou Senha inválida. Tente novamente';
     } 
 }
+
+
+
+
 </script>
