@@ -27,7 +27,7 @@
 
             <div class="down_menu">
                 <a href="spfc.html"> <button class="button_menu" id="button_spfc">SPFC</button></a>
-                <a href="musicas.html"> <button class="button_menu" id="button_msc"> Musicas </button> </a>   
+                <a href="musicas.html"> <button class="button_menu" id="button_msc"> Musicas </button> </a>
 
                 <button class="button_menu" id="button_menu" onclick="aparecer_quiz()">Jogar o Quiz</button>
 
@@ -41,130 +41,80 @@
 
         </div>
 
-          <div id="quiz_content">
+        <div id="quiz_content">
 
-                <div class="title_questions"><p> Teste aqui seus conhecimentos sobre o maior clube do Brasil!!!!</p> 
-                </div>
+            <div class="title_questions">
+                <p> Teste aqui seus conhecimentos sobre o maior clube do Brasil!!!!</p>
+            </div>
 
-                <div class="play">
+            <div class="play">
 
-                    <button class="button_play" onclick="jogar()">JOGAR</button>
-
-
-                </div>
-
-
+                <button class="button_play" onclick="jogar()">JOGAR</button>
 
 
             </div>
 
-            <div id="questions1" class="questions">
-                <div class="title_questions"> <p>1 - Em que ano o São Paulo conquistou seu primeiro título oficial?</p></div>
-
-
-                <div class="alternatives">
-                    <button class="button_alternatives" onclick="errou()">1935</button>
-                    <button class="button_alternatives" onclick="acertou()">1931</button>
-                    <button class="button_alternatives" onclick="errou()">1942</button>
-                    <button class="button_alternatives" onclick="errou()">1930</button>
-                </div>
 
 
 
+        </div>
+
+        <div id="questions1" class="questions">
+            <div class="title_questions">
+                <p>1 - Em que ano o São Paulo conquistou seu primeiro título oficial?</p>
             </div>
 
-            <div id="questions2" class="questions">
-                <div class="title_questions"> <p>2 - Qual o significado das 3 estrelas vermelhas no simbolo do São Paulo? </p> 
-                </div>
 
-                <div class="alternatives">
-                    <button class="button_alternatives" onclick="errou()">3 Mundiais</button>
-                    <button class="button_alternatives" onclick="acertou()">3 Libertadores </button>
-                    <button class="button_alternatives" onclick="errou()">3 Brasileiros</button>
-                    <button class="button_alternatives" onclick="errou()">3 Sulamericanos</button>
-                </div>
+            <div class="alternatives">
+                <button class="button_alternatives" onclick="errou()">1935</button>
+                <button class="button_alternatives" onclick="acertou()">1931</button>
+                <button class="button_alternatives" onclick="errou()">1942</button>
+                <button class="button_alternatives" onclick="errou()">1930</button>
             </div>
 
-            <div id="questions3" class="questions">
-                <div class="title_questions"> <p>3 -Qual o treinador que conquistou os três Brasileiros Consecutivos pelo São Paulo?</p> 
-                </div>
-
-                <div class="alternatives">
-
-                    <button class="button_alternatives" onclick="errou()">Paulo Autuori</button>
-                    <button class="button_alternatives" onclick="errou()">Rubens Minelli</button>
-                    <button class="button_alternatives" onclick="errou()">Dorival Junior</button>
-                    <button class="button_alternatives" onclick="acertou()">Muricy Ramalho</button>
-                    <button class="button_alternatives" onclick="errou()">Tele Santana</button>
-                </div>
-            </div>
-            
-            <div id="questions4" class="questions">
-                <div class="title_questions"> <p>4 - Em qual posição do ranking de maiores torcidas do Brasil está a torcida do São Paulo??</p> 
-                </div>
-
-                <div class="alternatives">
-                    <button class="button_alternatives" onclick="errou()">Primeiro</button>
-                    <button class="button_alternatives" onclick="errou()">Quinto</button>
-                    <button class="button_alternatives" onclick="errou()">Quarto</button>
-                    <button class="button_alternatives" onclick="acertou()">Terceiro</button>
-                    <button class="button_alternatives" onclick="errou()">Segundo</button>
-                </div>
 
 
+        </div>
 
-
-
+        <div id="questions2" class="questions">
+            <div class="title_questions">
+                <p>2 - Qual o significado das 3 estrelas vermelhas no simbolo do São Paulo? </p>
             </div>
 
-            <div id="questions5" class="questions">
-                <div class="title_questions"> <p>5 - Contra que time R. Ceni fez seu 100° Gol?</p>  </div>
-                <div class="alternatives">
+            <div class="alternatives">
+                <button class="button_alternatives" onclick="errou()">3 Mundiais</button>
+                <button class="button_alternatives" onclick="acertou()">3 Libertadores </button>
+                <button class="button_alternatives" onclick="errou()">3 Brasileiros</button>
+                <button class="button_alternatives" onclick="errou()">3 Sulamericanos</button>
+            </div>
+        </div>
 
-                    <button class="button_alternatives" onclick="errou()">Palmeiras</button>
-                    <button class="button_alternatives" onclick="acertou()">Corinthians</button>
-                    <button class="button_alternatives" onclick="errou()">Santos</button>
-                    <button class="button_alternatives" onclick="errou()">Ponte Preta</button>
-                    <button class="button_alternatives" onclick="errou()">Portuguesa</button>
-
-
-
-                </div>
-
-
+        <div id="questions3" class="questions">
+            <div class="title_questions">
+                <p>3 -Qual o treinador que conquistou os três Brasileiros Consecutivos pelo São Paulo?</p>
             </div>
 
-            <div id="result_quiz">
-                <div id="number_of_hits"></div>
+            <div class="alternatives">
 
-                <div id="graphics">
+                <button class="button_alternatives" onclick="errou()">Paulo Autuori</button>
+                <button class="button_alternatives" onclick="errou()">Rubens Minelli</button>
+                <button class="button_alternatives" onclick="errou()">Dorival Junior</button>
+                <button class="button_alternatives" onclick="acertou()">Muricy Ramalho</button>
+                <button class="button_alternatives" onclick="errou()">Tele Santana</button>
+            </div>
+        </div>
 
-                    <div class="graphics_size">
+        <div id="questions4" class="questions">
+            <div class="title_questions">
+                <p>4 - Em qual posição do ranking de maiores torcidas do Brasil está a torcida do São Paulo??</p>
+            </div>
 
-                        <canvas id="myChart"></canvas>
-
-                    </div>
-
-
-                    <div class="graphics_size">
-
-                        <canvas id="myChart2"></canvas>
-
-                    </div>
-
-                </div>
-                <div id="restart">
-
-                    <span id="span_media"></span>
-
-
-                    <button class="fresh_start" onclick="fresh_start()">Recomeçar</button>
-
-
-
-                </div>
-
-
+            <div class="alternatives">
+                <button class="button_alternatives" onclick="errou()">Primeiro</button>
+                <button class="button_alternatives" onclick="errou()">Quinto</button>
+                <button class="button_alternatives" onclick="errou()">Quarto</button>
+                <button class="button_alternatives" onclick="acertou()">Terceiro</button>
+                <button class="button_alternatives" onclick="errou()">Segundo</button>
             </div>
 
 
@@ -172,6 +122,64 @@
 
 
         </div>
+
+        <div id="questions5" class="questions">
+            <div class="title_questions">
+                <p>5 - Contra que time R. Ceni fez seu 100° Gol?</p>
+            </div>
+            <div class="alternatives">
+
+                <button class="button_alternatives" onclick="errou()">Palmeiras</button>
+                <button class="button_alternatives" onclick="acertou()">Corinthians</button>
+                <button class="button_alternatives" onclick="errou()">Santos</button>
+                <button class="button_alternatives" onclick="errou()">Ponte Preta</button>
+                <button class="button_alternatives" onclick="errou()">Portuguesa</button>
+
+
+
+            </div>
+
+
+        </div>
+
+        <div id="result_quiz">
+            <div id="number_of_hits"></div>
+
+            <div id="graphics">
+
+                <div class="graphics_size">
+
+                    <canvas id="myChart"></canvas>
+
+                </div>
+
+
+                <div class="graphics_size">
+
+                    <canvas id="myChart2"></canvas>
+
+                </div>
+
+            </div>
+            <div id="restart">
+
+                <span id="span_media"></span>
+
+
+                <button class="fresh_start" onclick="fresh_start()">Recomeçar</button>
+
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+    </div>
 
 
     </div>
@@ -192,7 +200,7 @@
 
         button_restart.style.display = "none"
 
-   }
+    }
 
 
     function jogar() {
@@ -258,20 +266,24 @@
 
             acertos++
 
-        } 
             for (var contador = 0; contador <= acertos; contador++) {
 
                 number_of_hits.innerHTML = `Você acertou ${contador} de 5!!!`
             }
 
+            armazenarResultado()
+
         }
 
 
+    }
 
 
 
 
-    
+
+
+
 
 
     function errou() {
@@ -317,22 +329,25 @@
 
             result_quiz.style.display = "block"
 
-        } 
-
 
             for (var contador = 0; contador <= acertos; contador++) {
 
                 number_of_hits.innerHTML = `Você acertou ${contador} de 5!!!`
             }
 
-
-
+            armazenarResultado()
 
         }
 
 
 
-    
+
+
+    }
+
+
+
+
 
 
 
@@ -366,7 +381,7 @@
         '3',
         '4',
         '5',
- 
+
     ];
 
 
@@ -423,4 +438,37 @@
         document.getElementById('myChart2'),
         config2
     );
+
+
+    function armazenarResultado() {
+        var idUsuarioVar = sessionStorage.ID_USUARIO;
+        var resultVar = acertos;
+
+
+
+        fetch("/usuarios/armazenarResultado", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                resultServer: resultVar,
+                idUsuarioServer: idUsuarioVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                console.log("Resultado armazenado com sucesso")
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+    }
+
 </script>

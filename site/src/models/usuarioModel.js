@@ -31,8 +31,19 @@ function valida_cadastro(nameVar, lastnameVar, cpfVar, telefoneVar, emailVar, us
     return database.executar(instrucao);
 }
 
+function armazenarResultado(idUsuarioVar,result) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", result);
+    
+    var instrucao = `
+        INSERT INTO  quiz (FK_Usuario, qntd_acertos)  VALUES  ('${idUsuarioVar}','${result}');
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 module.exports = {
     valida_cadastro,
     validacao_formulario,
-    listar
+    listar,
+    armazenarResultado,
 }

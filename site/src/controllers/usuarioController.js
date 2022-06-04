@@ -25,8 +25,8 @@ function listar(req, res) {
 }
 
 function validacao_formulario(req, res) {
-    var usuario = req.body.usuarioServer;
-    var password = req.body.passwordServer;
+    var usuarioVar = req.body.usuarioServer;
+    var passwordVar = req.body.passwordServer;
 
     if (usuarioVar == undefined) {
         res.status(400).send("Seu usuario está undefined!");
@@ -115,9 +115,39 @@ function valida_cadastro(req, res) {
     }
 }
 
+function armazenarResultado(req, res) {
+    var result = req.body.resultServer;
+    var idUsuarioVar = req.body.idUsuarioServer
+    
+    
+
+
+
+    if (result == undefined) {
+        res.status(400).send("Seu resultado está undefined!");
+    }
+
+    usuarioModel.armazenarResultado(idUsuarioVar,result)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao realizar o cadastro! Erro: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
 module.exports = {
     valida_cadastro,
     validacao_formulario,
     listar,
-    testar
+    testar,
+    armazenarResultado,
 }

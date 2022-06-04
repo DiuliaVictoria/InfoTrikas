@@ -155,7 +155,7 @@ function validacao_formulario(){
     var senha = ipt_senha.value;
     if(usuario.match(loginReg) && senha.match(senhaReg)){
         msg_login.style.display = 'none';
-        validacao_formulario();
+    
         fetch("/usuarios/autenticar", {
                 method: "POST",
                 headers: {
@@ -212,6 +212,7 @@ function validacao_formulario(){
     } else{
         msg_login.style.display = 'block';
         msg_login.innerHTML =  'Usuário ou Senha inválida. Tente novamente';
+        
     } 
 }
 
