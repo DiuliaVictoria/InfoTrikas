@@ -45,7 +45,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 700;
 
 }
@@ -79,6 +79,20 @@ body {
     color: red;
 }
 
+.card{
+    background-color:  rgba(0, 0, 0, 0.719); ;
+    width: 700px;
+    height: 240vh;
+    border-radius: 35px;
+    float: left;
+    margin-left: 500px;
+    margin-top: -600px;
+  
+}
+
+
+
+
 #quiz_content {
     background-color:  rgba(0, 0, 0, 0.719);;
     width: 100%;
@@ -106,7 +120,7 @@ body {
     width: 150px;
     cursor: pointer;
     margin-left: 40px;
-    margin-top: 50px;
+    margin-top: -400px;
     background-color: red;
     float: left;
     transition: 0.6s;
@@ -121,33 +135,34 @@ body {
     font-size: 2em;
     color: white;
     text-align: center;
+    height: 54.3vh;
+    align-items: center; 
 }
+.title_questions p{
+   margin-top: 300px;
+}
+
 .questions{
     background-color:  rgba(0, 0, 0, 0.719); ;
     width: 95%;
-    height: 300%;
-    margin-top: 200px;
+    height: 57%;
     display: none;
     color: red;
 }
 
 #result_quiz{
-
-    background-color:  rgba(0, 0, 0, 0.719);;
+    background-color:  rgba(0, 0, 0, 0.719);
     width: 95%;
-    height: 95%;
+    height: 100%;
     display: none;
     flex-direction: column;
-    margin-top: 90px;
+    margin-top: 170px;
     color: white;
-
-
-
 }
 
 #number_of_hits {
     width: 100%;
-    height: 15%;
+    height: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -207,11 +222,10 @@ body {
     width: 150px;
     cursor: pointer;
     margin-left: 40px;
-    margin-top: 50px;
+    margin-top: -500px;
     background-color: red;
     float: left;
-    transition: 0.6s;
-    margin-bottom: 50px;   
+    transition: 0.6s;   
 }
 
 .button_alternatives:hover{

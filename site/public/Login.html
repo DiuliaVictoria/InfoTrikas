@@ -155,6 +155,7 @@ function validacao_formulario(){
     var senha = ipt_senha.value;
     if(usuario.match(loginReg) && senha.match(senhaReg)){
         msg_login.style.display = 'none';
+        
     
         fetch("/usuarios/autenticar", {
                 method: "POST",

@@ -8,7 +8,6 @@
     <title>Quiz | Info Trikas</title>
     <link rel="stylesheet" href="css/jogo.css">
     <link rel="shortcut icon" href="img/São_Paulo_Futebol_Clube.png">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
 </head>
 
@@ -23,7 +22,7 @@
             </figure>
 
             <div class="top_menu">
-                <span id="message">Bem vindo!</span>
+                <span id="message">Vivemos pelo amor a essa camisa</span>
             </div>
 
             <div class="down_menu">
@@ -37,7 +36,11 @@
                 <a href="index.html"><button class="button_menu">Sair</button></a>
             </div>
        
+            <div id="card" class="card"></div>
+
         </div>
+
+       
         
         <div id="quiz_content">
           
@@ -153,6 +156,8 @@
         quiz_content.style.display = "block"
 
         button_restart.style.display = "none"
+
+        card.style.display = "none"
 
     }
 
@@ -289,8 +294,6 @@
         var idUsuarioVar = sessionStorage.ID_USUARIO;
         var resultVar = acertos;
 
-
-
         fetch("/usuarios/armazenarResultado", {
             method: "POST",
             headers: {
@@ -301,7 +304,6 @@
                 idUsuarioServer: idUsuarioVar
             })
         }).then(function (resposta) {
-
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
@@ -313,39 +315,19 @@
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
         });
-
+        
         return false;
     }
 
 
-    let proximaAtualizacao;
-    // O gráfico é construído com três funções:
-    // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
-    // 2. plotarGrafico -> Monta o gráfico com os dados trazidos e exibe em tela
-    // 3. atualizarGrafico -> Atualiza o gráfico, trazendo novamente dados do Banco
+    
 
-    // Esta função *obterDadosGrafico* busca os últimos dados inseridos em tabela de medidas.
-    // para, quando carregar o gráfico da primeira vez, já trazer com vários dados.
-    // A função *obterDadosGrafico* também invoca a função *plotarGrafico*
-
-    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
-    //     Para ajustar o "select", ajuste o comando sql em src/models
-
-
-
+    
     function obterDadosGrafico() {
-
-
-        if (proximaAtualizacao != undefined) {
-            clearTimeout(proximaAtualizacao);
-        }
 
         fetch(`/medidas/ultimas`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
-                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                    resposta.reverse();
-
                     plotarGrafico(resposta);
                 });
             } else {
@@ -369,44 +351,33 @@
     //     Para ajustar o "select", ajuste o comando sql em src/models
 
     function plotarGrafico(resposta) {
-        console.log('iniciando plotagem do gráfico2...');
-
         console.log(resposta)
-        console.log('Essa é minha resposta')
 
-
-        let labels2 = [
-
-        ];
+        let labels2 = [];
 
         let data2 = {
             labels: labels2,
             datasets: [{
-                label: 'Quantidade de pessoas por acerto',
-                backgroundColor: 'green',
-                borderColor: 'green',
+                label: 'Quantidade de acertos nessa Questão',
+                backgroundColor: 'red',
+                borderColor: 'white',
                 data: [],
             }]
         };
 
         let config = {
-            type: 'bar',
+            type: 'line',
             data: data2,
             options: {}
         };
 
         for (i = 0; i < resposta.length; i++) {
+
             var registro = resposta[i];
             labels2.push(registro.quantidadeAcertos);
             data2.datasets[0].data.push(registro.quantidadeJogadas)
-
         }
-        console.log("labels")
-        console.log(labels2)
-        console.log("data2.datasets[0].data")
-        console.log(data2.datasets[0].data)
-
-
+    
         const myChart = new Chart(
             document.getElementById('myChart2'),
             config

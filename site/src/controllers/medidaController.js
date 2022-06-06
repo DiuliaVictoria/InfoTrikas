@@ -1,14 +1,8 @@
 var medidaModel = require("../models/medidaModel");
 
-function buscarUltimasMedidas(req, res) {
+function buscarQtdAcertos(req, res) {
 
-   
-
-    var idResultado = req.params.idResultado;
-
-   
-
-    medidaModel.buscarUltimasMedidas(idResultado).then(function (resultado) {
+    medidaModel.buscarQtdAcertos().then((resultado) => {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -24,7 +18,7 @@ function buscarUltimasMedidas(req, res) {
 
 
 module.exports = {
-    buscarUltimasMedidas
+    buscarQtdAcertos
     
 
 }

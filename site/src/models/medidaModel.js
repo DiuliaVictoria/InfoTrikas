@@ -1,25 +1,16 @@
 var database = require("../database/config");
 
-function buscarUltimasMedidas(idAquario, limite_linhas) {
+function buscarQtdAcertos() {
+    const query = `
+    SELECT qntd_acertos AS "quantidadeAcertos", COUNT(qntd_acertos) AS "quantidadeJogadas" 
+    FROM quiz GROUP BY qntd_acertos ORDER BY qntd_acertos ASC;`
 
-    instrucaoSql = ''
-
-   
-     if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select qntd_acertos as "quantidadeAcertos" ,count(qntd_acertos) "quantidadeJogadas" from quiz group by qntd_acertos;`;
-    } else {
-
-        console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
-        return
-    }
-
-    console.log("Executando a instrução SQL: \n" + instrucaoSql);
-    return database.executar(instrucaoSql);
+return  database.executar(query)
 }
 
 
 
 module.exports = {
-    buscarUltimasMedidas
+    buscarQtdAcertos
    
 }

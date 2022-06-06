@@ -88,8 +88,9 @@
 
 <script>
 
+    var valor_tickets = []
     var ticket_list = []
-    
+
     function purchase() {
         buy_ticket.style.display = "Block"
         next_games.style.display = "none"
@@ -135,7 +136,20 @@
             )
         }
         else {
+
+            if(option == 1){
+                for(let i=0; i < qnt_ticket; i++){
+                    valor_tickets.push(75)
+                }
+            }else {
+                for(let i=0; i < qnt_ticket; i++){
+                    valor_tickets.push(150)
+                }
+            }
+            
             ticket_list.push(qnt_ticket)
+
+p
             Swal.fire({
                 position: 'top-end',
                 icon: 'success',
@@ -150,7 +164,7 @@
 
     function the_end() {
 
-        if (ticket_list == "") {
+        if (valor_tickets.length = 0) {
             Swal.fire(
                 'Carrinho vazio!',
                 'adicione algo ao seu carrinho',
@@ -191,27 +205,33 @@
             var qnt_ticket = Number(ticket_inp.value)
             var name = name_inp.value
             var contador = 0
-    
+            var valor = 0
 
-            for (var posicao = 0; posicao < ticket_list.length; posicao++) {
+            // for(let i=0; i < valor_tickets.length; i++){
+            //     console.log(valor_tickets[i]);
+            // }
+            
+            
+        // Sua compra de ${ticket_list[posicao]} Ingressos <br>
+         //     answer.innerHTML += `${name} <br>
+        //    para o jogo ${game}, foi realizada com Sucesso! <br> 
+        //    valor total ${valor} <br> <br>`
+        
+
               
-                if (option == 1) {
+                // if (option == 1) {
 
 
-                    answer.innerHTML += `${name} <br>
-                Sua compra de ${ticket_list[posicao]} Ingressos <br>
-                   para o jogo ${game}, foi realizada com Sucesso! <br> <br>`
-                }
 
-                else {
+                // else {
 
-                    answer.innerHTML += `${name} <br>
-                Sua compra de ${ticket_list[posicao]} Ingressos <br>
-                   para o jogo ${game}, foi realizada com Sucesso! <br> <br>`
+                //     answer.innerHTML += `${name} <br>
+                // Sua compra de ${ticket_list[posicao]} Ingressos <br>
+                //    para o jogo ${game}, foi realizada com Sucesso! <br>
+                //    valor total ${valor} <br> <br>`
                 
 
-                }
-            }
+                // }
 
         }
     }
