@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/jogo.css">
     <link rel="shortcut icon" href="img/São_Paulo_Futebol_Clube.png">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
 </head>
 
 <body>
@@ -35,14 +36,11 @@
 
                 <a href="index.html"><button class="button_menu">Sair</button></a>
             </div>
-
-
-
-
+       
         </div>
-
+        
         <div id="quiz_content">
-
+          
             <div class="title_questions">
                 <p> Teste aqui seus conhecimentos sobre o maior clube do Brasil!!!!</p>
             </div>
@@ -50,13 +48,7 @@
             <div class="play">
 
                 <button class="button_play" onclick="jogar()">JOGAR</button>
-
-
             </div>
-
-
-
-
         </div>
 
         <div id="questions1" class="questions">
@@ -64,16 +56,12 @@
                 <p>1 - Em que ano o São Paulo conquistou seu primeiro título oficial?</p>
             </div>
 
-
             <div class="alternatives">
                 <button class="button_alternatives" onclick="errou()">1935</button>
                 <button class="button_alternatives" onclick="acertou()">1931</button>
                 <button class="button_alternatives" onclick="errou()">1942</button>
                 <button class="button_alternatives" onclick="errou()">1930</button>
             </div>
-
-
-
         </div>
 
         <div id="questions2" class="questions">
@@ -116,11 +104,6 @@
                 <button class="button_alternatives" onclick="acertou()">Terceiro</button>
                 <button class="button_alternatives" onclick="errou()">Segundo</button>
             </div>
-
-
-
-
-
         </div>
 
         <div id="questions5" class="questions">
@@ -134,11 +117,7 @@
                 <button class="button_alternatives" onclick="errou()">Santos</button>
                 <button class="button_alternatives" onclick="errou()">Ponte Preta</button>
                 <button class="button_alternatives" onclick="errou()">Portuguesa</button>
-
-
-
             </div>
-
 
         </div>
 
@@ -146,44 +125,19 @@
             <div id="number_of_hits"></div>
 
             <div id="graphics">
-
-                <div class="graphics_size">
-
-                    <canvas id="myChart"></canvas>
-
-                </div>
-
-
-                <div class="graphics_size">
-
+  
+              <div class="graphics_size">
                     <canvas id="myChart2"></canvas>
-
                 </div>
 
             </div>
             <div id="restart">
-
-                <span id="span_media"></span>
-
-
                 <button class="fresh_start" onclick="fresh_start()">Recomeçar</button>
-
-
-
             </div>
-
-
         </div>
-
-
-
-
-
     </div>
 
-
     </div>
-
 
 </body>
 
@@ -201,7 +155,6 @@
         button_restart.style.display = "none"
 
     }
-
 
     function jogar() {
         quiz_content.style.display = "none"
@@ -278,14 +231,6 @@
 
     }
 
-
-
-
-
-
-
-
-
     function errou() {
 
         if (questions1.style.display == "block") {
@@ -294,17 +239,11 @@
 
             questions2.style.display = "block"
 
-
-
-
         } else if (questions2.style.display == "block") {
 
             questions2.style.display = "none"
 
             questions3.style.display = "block"
-
-
-
 
         } else if (questions3.style.display == "block") {
 
@@ -312,17 +251,11 @@
 
             questions4.style.display = "block"
 
-
-
-
         } else if (questions4.style.display == "block") {
 
             questions4.style.display = "none"
 
             questions5.style.display = "block"
-
-
-
 
         } else {
             questions5.style.display = "none"
@@ -336,21 +269,8 @@
             }
 
             armazenarResultado()
-
         }
-
-
-
-
-
     }
-
-
-
-
-
-
-
 
     function fresh_start() {
         acertos = 0
@@ -361,84 +281,9 @@
     }
 
 
-
-
-
-
-    const labels = [
-        '0',
-        '1',
-        '2',
-        '3',
-        '4',
-        '5',
-
-    ];
-    const labels2 = [
-        '0',
-        '1',
-        '2',
-        '3',
-        '4',
-        '5',
-
-    ];
-
-
-    const data = {
-        labels: labels,
-        datasets: [{
-            label: 'Quantidade de pessoas por pontuação',
-            backgroundColor: 'rgb(255, 0, 0)',
-            borderColor: 'rgb(255, 0, 0)',
-            data: [0, 5, 10, 15, 20, 25, 30, 35, 40],
-        },
-
-
-
-        ]
-    };
-    const data2 = {
-        labels: labels2,
-        datasets: [{
-            label: 'Quantidade de pessoas por pontuação',
-            backgroundColor: 'rgb(255, 0, 0)',
-            borderColor: 'rgb(255, 0, 0)',
-            data: [0, 5, 10, 15, 20, 25, 30, 35, 40],
-        },
-
-
-
-        ]
-    };
-
-
-
-    const config = {
-        type: 'line',
-        data: data,
-        options: {}
-    };
-
-    const config2 = {
-        type: 'bar',
-        data: data2,
-        options: {}
-    };
-
 </script>
 
 <script>
-    const myChart = new Chart(
-        document.getElementById('myChart'),
-        config
-    );
-
-    const myChart2 = new Chart(
-        document.getElementById('myChart2'),
-        config2
-    );
-
 
     function armazenarResultado() {
         var idUsuarioVar = sessionStorage.ID_USUARIO;
@@ -461,6 +306,7 @@
 
             if (resposta.ok) {
                 console.log("Resultado armazenado com sucesso")
+                obterDadosGrafico()
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
@@ -471,4 +317,104 @@
         return false;
     }
 
-</script>
+
+    let proximaAtualizacao;
+    // O gráfico é construído com três funções:
+    // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
+    // 2. plotarGrafico -> Monta o gráfico com os dados trazidos e exibe em tela
+    // 3. atualizarGrafico -> Atualiza o gráfico, trazendo novamente dados do Banco
+
+    // Esta função *obterDadosGrafico* busca os últimos dados inseridos em tabela de medidas.
+    // para, quando carregar o gráfico da primeira vez, já trazer com vários dados.
+    // A função *obterDadosGrafico* também invoca a função *plotarGrafico*
+
+    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+    //     Para ajustar o "select", ajuste o comando sql em src/models
+
+
+
+    function obterDadosGrafico() {
+
+
+        if (proximaAtualizacao != undefined) {
+            clearTimeout(proximaAtualizacao);
+        }
+
+        fetch(`/medidas/ultimas`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico(resposta);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+
+    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+
+    // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
+    // buscando a última medida inserida em tabela contendo as capturas, 
+
+    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+    //     Para ajustar o "select", ajuste o comando sql em src/models
+
+    function plotarGrafico(resposta) {
+        console.log('iniciando plotagem do gráfico2...');
+
+        console.log(resposta)
+        console.log('Essa é minha resposta')
+
+
+        let labels2 = [
+
+        ];
+
+        let data2 = {
+            labels: labels2,
+            datasets: [{
+                label: 'Quantidade de pessoas por acerto',
+                backgroundColor: 'green',
+                borderColor: 'green',
+                data: [],
+            }]
+        };
+
+        let config = {
+            type: 'bar',
+            data: data2,
+            options: {}
+        };
+
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels2.push(registro.quantidadeAcertos);
+            data2.datasets[0].data.push(registro.quantidadeJogadas)
+
+        }
+        console.log("labels")
+        console.log(labels2)
+        console.log("data2.datasets[0].data")
+        console.log(data2.datasets[0].data)
+
+
+        const myChart = new Chart(
+            document.getElementById('myChart2'),
+            config
+        );
+
+
+
+    }
+
+
+// </script>

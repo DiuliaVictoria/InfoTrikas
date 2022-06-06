@@ -89,8 +89,7 @@
 <script>
 
     var ticket_list = []
-
-
+    
     function purchase() {
         buy_ticket.style.display = "Block"
         next_games.style.display = "none"
@@ -164,7 +163,7 @@
             Swal.fire({
                 title: 'Finalizando compra...',
                 html: 'Aguarde um momento',
-                timer: 2000,
+                timer: 1000,
                 timerProgressBar: true,
                 didOpen: () => {
                     Swal.showLoading()
@@ -192,26 +191,24 @@
             var qnt_ticket = Number(ticket_inp.value)
             var name = name_inp.value
             var contador = 0
+    
 
             for (var posicao = 0; posicao < ticket_list.length; posicao++) {
-
-
-                total = (qnt_ticket * 150)
+              
                 if (option == 1) {
 
 
                     answer.innerHTML += `${name} <br>
                 Sua compra de ${ticket_list[posicao]} Ingressos <br>
-                   para o jogo ${game}, foi realizada com Sucesso! <br>
-                    Valor Total ${total} R$ <br> <br>`
+                   para o jogo ${game}, foi realizada com Sucesso! <br> <br>`
                 }
 
                 else {
 
                     answer.innerHTML += `${name} <br>
                 Sua compra de ${ticket_list[posicao]} Ingressos <br>
-                   para o jogo ${game}, foi realizada com Sucesso! <br>
-                    Valor Total ${total / 2} R$ <br> <br>`
+                   para o jogo ${game}, foi realizada com Sucesso! <br> <br>`
+                
 
                 }
             }
