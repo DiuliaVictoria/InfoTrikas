@@ -1,240 +1,254 @@
 <!DOCTYPE html>
 <html lang="pt">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/São_Paulo_Futebol_Clube.png">
-    <link rel="stylesheet" href="css/ingresso.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/São_Paulo_Futebol_Clube.png" />
+    <link rel="stylesheet" href="css/ingresso.css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.8/dist/sweetalert2.all.min.js"></script>
-    <title> Info trikas | Ingressos </title>
-</head>
+    <title>Info trikas | Ingressos</title>
+  </head>
 
-<body>
-
+  <body>
     <div id="buy_ticket">
-        <div class="text" id="text">
-            Selecione o Jogo: <select id="available_games">
-                <option value="nada">--</option>
-                <option value="São Paulo x América-MG"> São Paulo x América-MG</option>
-                <option value=" Botafogo x São Paulo"> Botafogo x São Paulo</option>
-                <option value="São Paulo x Palmeiras">São Paulo x Palmeiras</option>
-                <option value="São Paulo x Juventude"> São Paulo x Juventude </option>
-            </select> <br>
+      <div class="text" id="text">
+        Selecione o Jogo:
+        <select id="available_games">
+          <option value="nada">--</option>
+          <option value="São Paulo x América-MG">São Paulo x América-MG</option>
+          <option value=" Botafogo x São Paulo">Botafogo x São Paulo</option>
+          <option value="São Paulo x Palmeiras">São Paulo x Palmeiras</option>
+          <option value="São Paulo x Juventude">São Paulo x Juventude</option>
+        </select>
+        <br />
 
-            Insira o Tipo de ingresso <select id="option_game">
-                <option value="nada">--</option>
-                <option value="1"> Meia </option>
-                <option value="2"> Inteira </option>
+        Insira o Tipo de ingresso
+        <select id="option_game">
+          <option value="nada">--</option>
+          <option value="1">Meia</option>
+          <option value="2">Inteira</option>
+        </select>
+        <br />
 
-            </select> <br>
+        Insira a Quantidade de ingresso:
+        <input class="ticket" id="ticket_inp" /> <br />
+        Insira o Nome do Titular: <input class="ticket" id="name_inp" /> <br />
 
-            Insira a Quantidade de ingresso: <input class="ticket" id="ticket_inp"> <br>
-            Insira o Nome do Titular: <input class="ticket" id="name_inp"> <br>
+        Valor unitário : R$ 150,00 <br />
 
-            Valor unitário : R$ 150,00 <br>
-
-
-            <button class="button_ticket" id="Finishing" onclick="add()">Adicionar ao carrinho</button> <br>
-            <button class="button_ticket" id="end" onclick="the_end()">Finalizar Compra</button> <br>
-            <button class="button_ticket2" onClick="window.location.reload()">Voltar</button>
-
-        </div>
+        <button class="button_ticket" id="Finishing" onclick="add()">
+          Adicionar ao carrinho
+        </button>
+        <br />
+        <button class="button_ticket" id="end" onclick="the_end()">
+          Finalizar Compra
+        </button>
+        <br />
+        <button class="button_ticket2" onClick="window.location.reload()">
+          Voltar
+        </button>
+      </div>
     </div>
     <div id="answer">
-        <button class="button_ticket" onClick="window.location.reload()">Voltar</button> <br> <br>
+      <button class="button_ticket" onClick="window.location.reload()">
+        Voltar
+      </button>
+
+      <div class="container">
+        <div class="row">
+          <div>
+          </div>
+          <div>
+            <span id="qtd_total_tickets"></span>
+            <span id="valor_total_tickets"> <button class="button_ticket" onclick="pagar()">Pagar</button></span>
+          </div>
+        </div>
+      </div>
+
+      <br />
+      <br />
     </div>
     <section class="next_games" id="next_games">
+      <p class="page_title">Jogos disponiveis:</p>
 
+      <div class="next_play">
+        <h1>São Paulo x América-MG</h1>
+        <li>Data: 12/06/2022</li>
+        <li>Estádio: Morumbi - São Paulo</li>
+        <li>Horário: 16h00</li>
+        <button class="purchase" id="purchase" onclick="purchase()">
+          Comprar
+        </button>
+      </div>
 
-        <p class="page_title">Jogos disponiveis:</p>
+      <div class="next_play">
+        <h1>Botafogo x São Paulo</h1>
+        <li>Data: 16/06/2022</li>
+        <li>Estádio: Nilton Santos - Rio de Janeiro (RJ)</li>
+        <li>Horário: 16h00</li>
+        <button class="purchase" id="purchase" onclick="purchase()">
+          Comprar
+        </button>
+      </div>
 
-        <div class="next_play">
-            <h1>São Paulo x América-MG</h1>
-            <li>Data: 12/06/2022</li>
-            <li>Estádio: Morumbi - São Paulo</li>
-            <li>Horário: 16h00 </li>
-            <button class="purchase" id="purchase" onclick="purchase()">Comprar</button>
-        </div>
+      <div class="next_play">
+        <h1>São Paulo x Palmeiras</h1>
+        <li>Data: 20/06/2022</li>
+        <li>Estádio: Morumbi - São Paulo</li>
+        <li>Horário: 20h00</li>
+        <button class="purchase" id="purchase" onclick="purchase()">
+          Comprar
+        </button>
+      </div>
 
-        <div class="next_play">
-            <h1> Botafogo x São Paulo</h1>
-            <li>Data: 16/06/2022</li>
-            <li> Estádio: Nilton Santos - Rio de Janeiro (RJ)</li>
-            <li> Horário: 16h00</li>
-            <button class="purchase" id="purchase" onclick="purchase()">Comprar</button>
-        </div>
-
-        <div class="next_play">
-            <h1>São Paulo x Palmeiras</h1>
-            <li>Data: 20/06/2022</li>
-            <li> Estádio: Morumbi - São Paulo</li>
-            <li> Horário: 20h00</li>
-            <button class="purchase" id="purchase" onclick="purchase()">Comprar</button>
-        </div>
-
-        <div class="next_play">
-            <h1> São Paulo x Juventude </h1>
-            <li> Data: 26/06/2022</li>
-            <li> Estádio: Morumbi - São Paulo</li>
-            <li> Horário: 18h00</li>
-            <button class="purchase" id="purchase" onclick="purchase()">Comprar</button>
-        </div>
+      <div class="next_play">
+        <h1>São Paulo x Juventude</h1>
+        <li>Data: 26/06/2022</li>
+        <li>Estádio: Morumbi - São Paulo</li>
+        <li>Horário: 18h00</li>
+        <button class="purchase" id="purchase" onclick="purchase()">
+          Comprar
+        </button>
+      </div>
     </section>
-</body>
-
+  </body>
 </html>
 
 <script>
+  var valor_tickets = [];
+  var ticket_list = [];
 
-    var valor_tickets = []
-    var ticket_list = []
+  function purchase() {
+    buy_ticket.style.display = "Block";
+    next_games.style.display = "none";
+  }
 
-    function purchase() {
-        buy_ticket.style.display = "Block"
-        next_games.style.display = "none"
+  function add() {
+    var option = option_game.value;
+    var qnt_ticket = Number(ticket_inp.value);
+    var name = name_inp.value;
+    var game = available_games.value;
 
+    if (qnt_ticket <= 0) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Insira valores validos",
+      });
+    } else if (qnt_ticket > 5) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Voce so pode comprar no maximo 5 ingressos",
+      });
+    } else if (option == "nada" || game == "nada") {
+      Swal.fire(
+        "Não conseguimos indentificar qual o tipo de ingresso",
+        "Poderia adicionar qual o ingresso você deseja?",
+        "question"
+      );
+    } else if (name == "") {
+      Swal.fire(
+        "Qual o seu nome?",
+        "Insira por favor o nome do titular",
+        "question"
+      );
+    } else {
+      if (option == 1) {
+        for (let i = 0; i < qnt_ticket; i++) {
+          valor_tickets.push(75);
+        }
+      } else {
+        for (let i = 0; i < qnt_ticket; i++) {
+          valor_tickets.push(150);
+        }
+      }
+
+      ticket_list.push(qnt_ticket);
+
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Ingresso adicionado ao carrinho",
+        showConfirmButton: false,
+        timer: 1500,
+      });
     }
+  }
 
-    function add() {
-        var option = option_game.value
-        var qnt_ticket = Number(ticket_inp.value)
-        var name = name_inp.value
-        var game = available_games.value
-
-
-        if (qnt_ticket <= 0) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Insira valores validos',
-            })
+  function the_end() {
+    if (valor_tickets.length == 0) {
+      Swal.fire("Carrinho vazio!", "adicione algo ao seu carrinho", "question");
+    } else {
+      let timerInterval;
+      Swal.fire({
+        title: "Finalizando compra...",
+        html: "Aguarde um momento",
+        timer: 1000,
+        timerProgressBar: true,
+        didOpen: () => {
+          Swal.showLoading();
+          const b = Swal.getHtmlContainer().querySelector("b");
+          timerInterval = setInterval(() => {
+            b.textContent = Swal.getTimerLeft();
+          }, 100);
+        },
+        willClose: () => {
+          clearInterval(timerInterval);
+        },
+      }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+          console.log("I was closed by the timer");
         }
-        else if (qnt_ticket > 5) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Voce so pode comprar no maximo 5 ingressos',
-            })
-        }
-        else if (option == "nada" ||
-            game == "nada") {
+      });
 
-            Swal.fire(
-                'Não conseguimos indentificar qual o tipo de ingresso',
-                'Poderia adicionar qual o ingresso você deseja?',
-                'question'
-            )
-        }
-        else if (name == "") {
+      answer.style.display = "block";
+      buy_ticket.style.display = "none";
 
-            Swal.fire(
-                'Qual o seu nome?',
-                'Insira por favor o nome do titular',
-                'question'
-            )
-        }
-        else {
+      var option = option_game.value;
+      var game = available_games.value;
+      var qnt_ticket = Number(ticket_inp.value);
+      var name = name_inp.value;
+      var contador = 0;
+      var valor = 0;
+      var totalTickets = 0;
 
-            if(option == 1){
-                for(let i=0; i < qnt_ticket; i++){
-                    valor_tickets.push(75)
-                }
-            }else {
-                for(let i=0; i < qnt_ticket; i++){
-                    valor_tickets.push(150)
-                }
-            }
-            
-            ticket_list.push(qnt_ticket)
+      for (let i = 0; i < valor_tickets.length; i++) {
+        valor += valor_tickets[i];
+      }
 
-p
-            Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: 'Ingresso adicionado ao carrinho',
-                showConfirmButton: false,
-                timer: 1500
+      for (let i = 0; i < ticket_list.length; i++) {
+        totalTickets += ticket_list[i];
+        qtd_total_tickets.innerHTML += `${name} <br>
+     Sua compra de ${ticket_list[i]} Ingressos <br>
+     para o jogo ${game}, foi realizada com Sucesso! <br> <br>`
+      }
 
-            })
+    
 
-        }
+      valor_total_tickets.innerHTML += `O Valor total da compra ficou de <b style="color: red;"> R$ ${valor} <b>`
+
+     
     }
+  }
+function pagar(){
 
-    function the_end() {
-
-        if (valor_tickets.length = 0) {
-            Swal.fire(
-                'Carrinho vazio!',
-                'adicione algo ao seu carrinho',
-                'question'
-            )
-        }
-
-        else {
-            let timerInterval
-            Swal.fire({
-                title: 'Finalizando compra...',
-                html: 'Aguarde um momento',
-                timer: 1000,
-                timerProgressBar: true,
-                didOpen: () => {
-                    Swal.showLoading()
-                    const b = Swal.getHtmlContainer().querySelector('b')
-                    timerInterval = setInterval(() => {
-                        b.textContent = Swal.getTimerLeft()
-                    }, 100)
-                },
-                willClose: () => {
-                    clearInterval(timerInterval)
-                }
-            }).then((result) => {
-                /* Read more about handling dismissals below */
-                if (result.dismiss === Swal.DismissReason.timer) {
-                    console.log('I was closed by the timer')
-                }
-            })
-
-            answer.style.display = "block"
-            buy_ticket.style.display = "none"
-
-
-            var option = option_game.value
-            var game = available_games.value
-            var qnt_ticket = Number(ticket_inp.value)
-            var name = name_inp.value
-            var contador = 0
-            var valor = 0
-
-            // for(let i=0; i < valor_tickets.length; i++){
-            //     console.log(valor_tickets[i]);
-            // }
-            
-            
-        // Sua compra de ${ticket_list[posicao]} Ingressos <br>
-         //     answer.innerHTML += `${name} <br>
-        //    para o jogo ${game}, foi realizada com Sucesso! <br> 
-        //    valor total ${valor} <br> <br>`
-        
-
-              
-                // if (option == 1) {
-
-
-
-                // else {
-
-                //     answer.innerHTML += `${name} <br>
-                // Sua compra de ${ticket_list[posicao]} Ingressos <br>
-                //    para o jogo ${game}, foi realizada com Sucesso! <br>
-                //    valor total ${valor} <br> <br>`
-                
-
-                // }
-
-        }
-    }
-
-
+    Swal.fire({
+  title: `Deseja confirmar o pagamento ?`,
+  showDenyButton: true,
+  showCancelButton: true,
+  confirmButtonText: 'Sim',
+  denyButtonText: `Não`,
+}).then((result) => {
+  /* Read more about isConfirmed, isDenied below */
+  if (result.isConfirmed) {
+    Swal.fire('Confirmado!', 'Bom Jogo!', 'success')
+  } else if (result.isDenied) {
+    Swal.fire('Verifique o valor da compra', '', 'info')
+  }
+})
+}
+    
 </script>
