@@ -8,9 +8,17 @@ function buscarQtdAcertos() {
 return  database.executar(query)
 }
 
+function buscarUser() {
+    const query = `
+    SELECT count(idUsuario)  AS 'qntd_user' from usuarios;`
+
+return  database.executar(query)
+}
+
 
 
 module.exports = {
-    buscarQtdAcertos
+    buscarQtdAcertos,
+    buscarUser
    
 }

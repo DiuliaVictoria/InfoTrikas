@@ -15,10 +15,20 @@ function buscarQtdAcertos(req, res) {
     });
 }
 
+function buscardadosusuarios(req, res) {
+    let user = [];
 
+    medidaModel.buscarUser().then((response) => {
+        const tamanho = response.length;
+        if (tamanho > 0) {
+            user.push(response)
+
+        }})
+    }
 
 module.exports = {
-    buscarQtdAcertos
+    buscarQtdAcertos,
+    buscardadosusuarios
     
 
 }

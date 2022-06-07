@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz | Info Trikas</title>
     <link rel="stylesheet" href="css/jogo.css">
@@ -36,7 +37,9 @@
                 <a href="index.html"><button class="button_menu">Sair</button></a>
             </div>
        
-            <div id="card" class="card"></div>
+            <div id="card" class="cardClass">
+                <canvas id="myChart"></canvas>
+            </div>
 
         </div>
 
@@ -147,6 +150,7 @@
 </html>
 
 <script>
+
 
     var acertos = 0
 
@@ -388,10 +392,110 @@
     }
 
 
+// daods user 
+var proximaAtualizacao;
+window.onload = obteruser ()
+
+function obteruser() {
+    if (proximaAtualizacao != undefined) {
+      clearTimeout(proximaAtualizacao);
+    }
+
+    fetch(`/medidas/ultimas2`, { cache: 'no-store' }).then((response) => {
+      if (response.ok) {
+        response.json().then((resposta) => {
+
+          const parm1 = resposta.user[0][0].qntd_user;
+
+          plotarGraficoUser(parm1)
+        })
+
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+      }
+    })
+    .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+      });
+  }
+
+  function plotarGraficoUser(parm1) {
+    var dados = {
+      labels: ["Quantidade de usuarios"],
+      datasets: [
+        {
+          yAxisID: 'y-umidade',
+          label: 'Total De São Paulinos',
+          borderColor: '#b3313b',
+          backgroundColor: '#b3313b',
+          fill: true,
+          data: []
+        }
+      ]
+    };
+    dados.datasets[0].data.push(parm1);
+   
+    var ctx = myChart.getContext('2d');
+    window.grafico_bar = Chart.Bar(ctx, {
+      data: dados,
+      options: {
+        responsive: true,
+        animation: { duration: 500 },
+        hoverMode: 'index',
+        stacked: false,
+        title: {
+          display: false,
+          text: 'Dados capturados'
+        },
+        scales: {
+          yAxes: [{
+            type: 'linear',
+            display: true,
+            position: 'left',
+            id: 'y-temperatura',
+            ticks: {
+              beginAtZero: true,
+              max: 50,
+              min: 0
+            }
+          },
+          ],
+        }
+      }
+    });
+
+    setTimeout(() => atualizarGrafico(dados, parm1), 2000);
+  } 
+
+  function atualizarGrafico(dados, parm1) {
+    console.log();
+    fetch(`/medidas/ultimas2`, { cache: 'no-store' }, {
+    }).then((response) => {
+      if (response.ok) {
+        response.json().then((resposta) => {
+
+            const Newparm1 = resposta.user[0][0].qntd_user;
 
 
+          dados.datasets[0].data = [];
+        
+          dados.datasets[0].data.push(NewParm1);
 
-    
 
+          window.grafico_bar.update();
+
+          proximaAtualizacao = setTimeout(() => atualizarGrafico(dados, parm1), 2000);
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+        // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+        proximaAtualizacao = setTimeout(() => atualizarGrafico(dados, parm1, parm2, parm3), 2000);
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+      });
+
+  }
 
 // </script>
