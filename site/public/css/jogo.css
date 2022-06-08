@@ -82,15 +82,21 @@ body {
 .cardClass{
     background-color:  rgba(0, 0, 0, 0.719); ;
     width: 700px;
-    height: 240vh;
+    height: 170vh;
     border-radius: 35px;
     float: left;
     margin-left: 500px;
-    margin-top: -600px;
-  
+    margin-top: -580px;
+    margin-bottom: 40px;
+    text-align: center;
+    list-style: none;
+    font-size: 2em;
+    color: white;
 } 
 
-
+.cardClass li{
+    margin-top: 30px;
+}
 
 
 #quiz_content {

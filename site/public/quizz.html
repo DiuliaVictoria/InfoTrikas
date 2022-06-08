@@ -39,6 +39,9 @@
        
             <div id="card" class="cardClass">
                 <canvas id="myChart"></canvas>
+            <li>Bem Vindo!</li>
+            <li>Agora você faz parte dessa comunidade incrivel...</li>
+            <li>Navegue pelo site e divirta-se</li>
             </div>
 
         </div>
@@ -404,10 +407,8 @@ function obteruser() {
     fetch(`/medidas/ultimas2`, { cache: 'no-store' }).then((response) => {
       if (response.ok) {
         response.json().then((resposta) => {
-
-          const parm1 = resposta.user[0][0].qntd_user;
-
-          plotarGraficoUser(parm1)
+            const qtd_user = resposta.response[0].qntd_user;
+            plotarGraficoUser(qtd_user)
         })
 
       } else {
@@ -424,10 +425,10 @@ function obteruser() {
       labels: ["Quantidade de usuarios"],
       datasets: [
         {
-          yAxisID: 'y-umidade',
+          yAxisID: 'y-temperatura',
           label: 'Total De São Paulinos',
-          borderColor: '#b3313b',
-          backgroundColor: '#b3313b',
+          borderColor: 'red',
+          backgroundColor: 'white',
           fill: true,
           data: []
         }
@@ -464,7 +465,7 @@ function obteruser() {
       }
     });
 
-    setTimeout(() => atualizarGrafico(dados, parm1), 2000);
+    // setTimeout(() => atualizarGrafico(dados, parm1), 2000);
   } 
 
   function atualizarGrafico(dados, parm1) {
